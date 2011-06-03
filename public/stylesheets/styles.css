@@ -1,0 +1,29 @@
+body { background-color: #000; color: #333; }
+
+/* ------------------------------
+container styles
+------------------------------ */
+
+#container
+{
+	margin: 1em auto;
+	width: 1000px;
+	text-align: left;
+	background: #fff;
+	border: 3px solid #f00;
+}
+
+
+/* ------------------------------
+header styles
+------------------------------ */
+
+#header
+{
+	height: 120px;
+	width: 100%;
+	position: relative;
+	/*background: url(header.jpg) no-repeat 0 0;*/
+	background: white;
+	border-bottom: 1px solid #f00;
+}

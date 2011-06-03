@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h2>Artist names (fix)</h2>
+  <h3><%= @event.venue.name %></h3>
+  <h3><%= @event.start_time.to_formatted_s(:short) %></h3>
+</p>
+
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

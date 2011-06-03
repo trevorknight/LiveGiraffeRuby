@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h2><%= @artist.name %></h2>
+<p>
+  Upcoming shows:<br>
+  <ul>
+    <% if @artist.events.any? %>
+      <% @artist.events.each do |event| %>
+	    <li><%= link_to (event.start_time.to_formatted_s(:short) + ' at ' + event.venue.name), event %></li>
+	  <% end %>
+	<% end %>
+  </ul>
+</p>
+
+
+<%= link_to 'Edit', edit_artist_path(@artist) %> |
+<%= link_to 'Back', artists_path %>

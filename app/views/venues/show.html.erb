@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h2><%= @venue.name %></h2>
+<p>
+  <h3><%= @venue.address %></h3>
+<p>
+  <b>Upcoming shows</b>
+  <ul><% if @venue.events.any? %>
+    <% @venue.events.each do |event| %>
+      <li><% if event.artists.any? %><% event.artists.each do |artist| %><%= link_to artist.name, event %><br> <% end %><% end %></li>
+    <% end %>
+  <% end %></ul>
+  <%= link_to 'website', @venue.website %>
+</p>
+
+
+<%= link_to 'Edit', edit_venue_path(@venue) %> |
+<%= link_to 'Back', venues_path %>

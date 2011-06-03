@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  start_time: 2011-05-28 15:50:33
+  venue_id: 1
+
+two:
+  start_time: 2011-05-28 15:50:33
+  venue_id: 1
