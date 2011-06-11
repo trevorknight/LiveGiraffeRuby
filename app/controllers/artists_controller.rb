@@ -1,4 +1,6 @@
 class ArtistsController < ApplicationController
+
+  
   # GET /artists
   # GET /artists.xml
   def index
@@ -6,7 +8,7 @@ class ArtistsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @artists }
+      # format.xml  { render :xml => @artists }
 	  format.json { render :json => @artists }
     end
   end
@@ -18,7 +20,7 @@ class ArtistsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @artist }
+      #format.xml  { render :xml => @artist }
     end
   end
 
@@ -29,7 +31,7 @@ class ArtistsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @artist }
+      #format.xml  { render :xml => @artist }
     end
   end
 
@@ -42,14 +44,14 @@ class ArtistsController < ApplicationController
   # POST /artists.xml
   def create
     @artist = Artist.new(params[:artist])
-
+	
     respond_to do |format|
       if @artist.save
         format.html { redirect_to(@artist, :notice => 'Artist was successfully created.') }
-        format.xml  { render :xml => @artist, :status => :created, :location => @artist }
+        #format.xml  { render :xml => @artist, :status => :created, :location => @artist }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @artist.errors, :status => :unprocessable_entity }
+        #format.xml  { render :xml => @artist.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -62,10 +64,10 @@ class ArtistsController < ApplicationController
     respond_to do |format|
       if @artist.update_attributes(params[:artist])
         format.html { redirect_to(@artist, :notice => 'Artist was successfully updated.') }
-        format.xml  { head :ok }
+        #format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @artist.errors, :status => :unprocessable_entity }
+        #format.xml  { render :xml => @artist.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -78,7 +80,7 @@ class ArtistsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(artists_url) }
-      format.xml  { head :ok }
+      #format.xml  { head :ok }
     end
   end
 end

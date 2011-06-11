@@ -3,7 +3,8 @@ class Venue < ActiveRecord::Base
   
   validates :name, :presence => true, 
                    :length => { :minimum => 3 },
-				   :uniqueness => true
+                   :uniqueness => true
+  validates :address, :presence => true
 				   
   
 end

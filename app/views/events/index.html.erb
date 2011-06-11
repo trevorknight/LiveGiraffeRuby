@@ -8,29 +8,13 @@
     <th>Venue</th>
     <th>Date</th>
     <th></th>
-    <th></th>
+	<th></th>
+	<th></th>
 	<th></th>
   </tr>
-
-<% @events.each do |event| %>
-  <tr>
-    <td>
-	  <% if event.artists.any? %> 
-	    <% event.artists.each do |artist| %>
-		  <%= link_to artist.name, artist %><br>
-		<% end %>
-	  <% end %>
-	</td>
-    <td><% if !event.venue.nil? %><%= link_to event.venue.name, event.venue %></td><% end %>
-    <td><%= event.start_time.to_formatted_s(:short) %> </td>
-    <td><%= link_to 'More Info', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-  <tr></tr>
-<% end %>
 </table>
 
-<br />
+<%= render @events %>
+<br>
 
-<%= link_to 'New Event', new_event_path %>
+
