@@ -6,7 +6,7 @@ class VenuesController < ApplicationController
     
 	respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @venues }
+      #format.xml  { render :xml => @venues }
 	  format.json { render :json => @venues }
     end
   end
@@ -18,7 +18,7 @@ class VenuesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @venue }
+      #format.xml  { render :xml => @venue }
     end
   end
 
@@ -29,7 +29,7 @@ class VenuesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @venue }
+      #format.xml  { render :xml => @venue }
     end
   end
 
@@ -46,10 +46,10 @@ class VenuesController < ApplicationController
     respond_to do |format|
       if @venue.save
         format.html { redirect_to(@venue, :notice => 'Venue was successfully created.') }
-        format.xml  { render :xml => @venue, :status => :created, :location => @venue }
+        #format.xml  { render :xml => @venue, :status => :created, :location => @venue }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @venue.errors, :status => :unprocessable_entity }
+        #format.xml  { render :xml => @venue.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -62,10 +62,10 @@ class VenuesController < ApplicationController
     respond_to do |format|
       if @venue.update_attributes(params[:venue])
         format.html { redirect_to(@venue, :notice => 'Venue was successfully updated.') }
-        format.xml  { head :ok }
+        #format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @venue.errors, :status => :unprocessable_entity }
+        #format.xml  { render :xml => @venue.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -78,7 +78,7 @@ class VenuesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(venues_url) }
-      format.xml  { head :ok }
+      #format.xml  { head :ok }
     end
   end
 end

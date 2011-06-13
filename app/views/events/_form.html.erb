@@ -13,10 +13,12 @@
   <div class="field">
     <%= f.label :artist_tokens, "Artists" %><br />
     <%= f.text_field :artist_tokens, "data-pre" => @event.artists.to_json %>
+	<p>Artist missing? Click <%= link_to "here!", new_venue_path %></p>
   </div>
   <div class="field">
     <%= f.label :venue_token, "Venue" %><br />
     <%= f.text_field :venue_token, "data-pre" => "["+@event.venue.to_json+"]" %>
+	<p>Venue missing? Click <%= link_to "here!", new_venue_path %></p>
   </div>
   <div class="field">
     <%= f.label :start_time %><br />

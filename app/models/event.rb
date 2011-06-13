@@ -2,6 +2,7 @@ class Event < ActiveRecord::Base
   
   belongs_to :venue
   has_and_belongs_to_many :artists
+
   
   attr_reader :artist_tokens
   attr_reader :venue_token

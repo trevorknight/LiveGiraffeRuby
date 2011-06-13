@@ -1,4 +1,9 @@
-body { background-color: #000; color: #333; }
+body { background-color: #fff; color: #000; }
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font: 90% arial, hevetica, sans-serif;
+}
 
 /* ------------------------------
 container styles
@@ -7,10 +12,10 @@ container styles
 #container
 {
 	margin: 1em auto;
-	width: 1000px;
+	width: 800px;
 	text-align: left;
 	background: #fff;
-	border: 3px solid #f00;
+	border: 3px solid #000;
 }
 
 
@@ -23,7 +28,115 @@ header styles
 	height: 120px;
 	width: 100%;
 	position: relative;
-	/*background: url(header.jpg) no-repeat 0 0;*/
-	background: white;
-	border-bottom: 1px solid #f00;
+	border-bottom: 3px solid #000;
+}
+
+/* ------------------------------
+mainnav styles
+------------------------------ */
+
+#mainnav
+{
+    border-bottom: 3px solid #000
+}
+
+#mainnav ul
+{
+	margin: 0 0 0 20px;
+	padding: 0;
+	list-style-type: none;
+	border-left: 1px solid #000;
+}
+
+#mainnav li
+{
+	display: inline;
+	padding: 0 10px;
+	border-right: 1px solid #000;
+}
+
+
+/* ------------------------------
+side bar
+------------------------------ */
+#side_bar
+{
+	float: left;
+	width: 200px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-right: 1px
+}
+
+/* ------------------------------
+contents styles
+------------------------------ */
+
+#contents
+{
+	float: right;
+	width: 550px;
+}
+
+.event_listing
+{ 
+    padding: 5px;
+    border-bottom: 1px solid #000; 
+}
+
+/* ------------------------------
+footer styles
+------------------------------ */
+
+#footer
+{
+	clear: both;
+	color: #fff;
+	background: #000;
+	text-align: right;
+    font-size: 90%;
+	padding: 1px
+}
+
+/* ------------------------------
+forms and errors
+------------------------------ */
+
+iv.field, div.actions {
+  margin-bottom: 10px;
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
 }

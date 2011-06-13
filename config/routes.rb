@@ -1,11 +1,11 @@
 Ligi::Application.routes.draw do
-  resources :venues
-
-  resources :artists
+  
 
   root :to => "events#index"
   resources :events
-
+  resources :venues
+  resources :artists
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
