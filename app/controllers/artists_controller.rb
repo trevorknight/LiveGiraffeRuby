@@ -1,7 +1,7 @@
 class ArtistsController < ApplicationController
 
   # GET /artists
-  # GET /artists.xml
+
   def index
     @artists = Artist.where("name LIKE ?", "%#{params[:q]}%")
 
@@ -23,6 +23,10 @@ class ArtistsController < ApplicationController
   # GET /artists/new
   def new
     @artist = Artist.new
+    
+    respond_to do |format|
+      format.html #new.html.erb
+    end
   end
 
   # GET /artists/1/edit
@@ -36,7 +40,7 @@ class ArtistsController < ApplicationController
 	
     respond_to do |format|
       if @artist.save
-        redirect_to new_event_path, :notice => 'Artist was successfully created.'
+        format.html { redirect_to(new_event_path, :notice => 'Artist was successfully created.') }
       else
         render :action => "new"
       end
@@ -48,10 +52,10 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
 
     respond_to do |format|
-      if @artist.update_attributes(params[:artist])
-        redirect_to(new_event_path, :notice => 'Artist was successfully updated.')
+      if @venue.update_attributes(params[:venue])
+        format.html { redirect_to(@artist, :notice => 'Artist was successfully updated.') }
       else
-        render :action => "edit" 
+        format.html { render :action => "edit" }
       end
     end
   end
@@ -62,7 +66,7 @@ class ArtistsController < ApplicationController
     @artist.destroy
 
     respond_to do |format|
-      redirect_to(artists_url)
+      format.html { redirect_to(artists_url) }
     end
   end
 end
