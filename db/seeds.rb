@@ -6,14 +6,7 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-Venue.create [{:name => "L'Astral"},
-              {:name => "L'Escogriffe"},
-			  {:name => "Metropolis"},
-			  {:name => "Le Cagibi"},
-			  {:name => "Bar Fly"},
-			  {:name => "The Bell Centre"},
-			  {:name => "La Tulipe"},
-			  {:name => "Ye Olde Orchard"},
-			  {:name => "Upstairs"},
-			  {:name => "Diese Onze"}]
-			  
+
+
+
+  
