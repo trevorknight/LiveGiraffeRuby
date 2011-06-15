@@ -4,9 +4,11 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
+include Rake::DSL
+
 module ::Ligi
   class Application
-    include Rake::DSL
+#    include Rake::DSL
   end
 end
  
