@@ -45,7 +45,7 @@ namespace :scrapers do
                 artist = Artist.find_or_create_by_name(artist_name.strip)
 
                 date = DateTime.parse(day.to_s + " " + month + " " + DateTime.now.year.to_s + " " + time);
-                event = Event.joins([:artists, :venue]).where('artists.name = ? AND venues.name = ?', artist, venue)
+                event = Event.joins([:artists, :venue]).where('artists.id = ? AND venues.id = ?', artist, venue)
 
                 if event.blank? 
                     event = Event.new
