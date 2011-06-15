@@ -12,7 +12,6 @@ $(function() {
     crossDomain: false,
 	preventDuplicates: true,
 	prePopulate: $("#event_venue_token").data("pre"),
-	tokenLimit: 1,
-	minChars: 3
+	tokenLimit: 1
   });
 });

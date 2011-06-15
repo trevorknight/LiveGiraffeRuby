@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Upcoming shows</th>
+    <th>Next Show</th>
     <th></th>
     <th></th>
   </tr>
@@ -11,7 +11,8 @@
 <% @artists.each do |artist| %>
   <tr>
     <td><%= link_to artist.name, artist %></td>
-	<td><% if artist.events.any? %> <% artist.events.each do |event| %><%= link_to event.start_time.to_formatted_s(:short) + ' at ' + event.venue.name.to_s, event_path(event.venue.id) %><br><% end %><% end %>
+	  <td><% event = artist.events.upcoming.first %>
+          <%= link_to event.start_time.to_formatted_s(:short) + ' at ' + event.venue.name.to_s, event_path(event.venue.id) unless event.nil?%><br>
     <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
     <td><%= link_to 'Destroy', artist, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

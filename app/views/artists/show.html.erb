@@ -4,12 +4,20 @@
   <h2><%= @artist.name %></h2>
 <p>
   Upcoming shows:<br>
+  <i><%= "None" unless @artist.events.upcoming.any? %></i>
   <ul>
-    <% if @artist.events.any? %>
-      <% @artist.events.each do |event| %>
+    <% @artist.events.upcoming.each do |event| %>
 	    <li><%= link_to (event.start_time.to_formatted_s(:short) + ' at ' + event.venue.name), event %></li>
 	  <% end %>
-	<% end %>
+  </ul>
+</p>
+<p>
+  Past shows:<br>
+  <i><%= "None" unless @artist.events.past.any? %></i>
+  <ul>
+    <% @artist.events.past.each do |event| %>
+	    <li><%= link_to (event.start_time.to_formatted_s(:short) + ' at ' + event.venue.name), event %></li>
+	  <% end %>
   </ul>
 </p>
 
