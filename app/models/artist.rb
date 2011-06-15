@@ -5,6 +5,5 @@ class Artist < ActiveRecord::Base
                    :uniqueness => true
   
   scope :where_name, lambda {|term| where("artists.name LIKE ?", "%#{term}%") }
-  
     
 end
