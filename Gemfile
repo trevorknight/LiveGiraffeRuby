@@ -32,3 +32,5 @@ gem 'mechanize'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+gem 'heroku'
