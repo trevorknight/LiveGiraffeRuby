@@ -1,6 +1,6 @@
 .bundle
+Gemfile.lock
 config/database.yml
 db/*.sqlite3
 log/*.log
 tmp/**/*
-gemfile.lock
