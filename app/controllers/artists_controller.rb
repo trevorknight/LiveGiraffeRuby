@@ -49,7 +49,7 @@ class ArtistsController < ApplicationController
 
     respond_to do |format|
       if @artist.update_attributes(params[:artist])
-        redirect_to(@artist, :notice => 'Artist was successfully updated.')
+        redirect_to(new_event_path, :notice => 'Artist was successfully updated.')
       else
         render :action => "edit" 
       end

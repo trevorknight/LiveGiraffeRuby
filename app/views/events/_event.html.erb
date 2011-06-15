@@ -1,1 +1,17 @@
-<div class="event_listing">    <table border=0 cellpadding=10>    <tr>      <td>	    <% event.artists.each do |artist| %>  	      <%= artist.name %><br>	    <% end %>	  </td>  	  <td><%= link_to event.venue.name, event.venue unless event.venue.nil? %></td>      <td><%= event.start_time.to_formatted_s(:short) %> </td>      <td><%= link_to 'Edit', edit_event_path(event) %></td>      <td><%= link_to 'Delete', event, :confirm => 'Are you sure?', :method => :delete %></td>    </tr>  </table>  </div>
+<div class="event_listing">
+  
+  <table border=0 cellpadding=10>
+    <tr>
+      <td>
+	    <% event.artists.each do |artist| %>  
+	      <%= artist.name %><br>
+	    <% end %>
+	  </td>
+  	  <td><%= link_to event.venue.name, event.venue unless event.venue.nil? %></td>
+      <td><%= event.start_time.to_formatted_s(:short) %> </td>
+      <td><%= link_to 'Edit', edit_event_path(event) %></td>
+      <td><%= link_to 'Delete', event, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  </table>
+  
+</div>
