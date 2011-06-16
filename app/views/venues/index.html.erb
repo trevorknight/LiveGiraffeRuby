@@ -3,17 +3,13 @@
 <table>
   <tr>
     <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Address</th>
   </tr>
 
 <% @venues.each do |venue| %>
   <tr>
     <td><%= link_to venue.name, venue %></td>
-	<td><%= venue.address %></td>
-    <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
-    <td><%= link_to 'Destroy', venue, :confirm => 'Are you sure?', :method => :delete %></td>
+	  <td><%= venue.address %></td>
   </tr>
 <% end %>
 </table>

@@ -10,6 +10,6 @@
   <h3><%= @event.start_time.to_formatted_s(:short) %></h3>
 </p>
 
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<% if @event.owned_by? current_user %>
+  <%= link_to 'Edit', edit_event_path(@event) %>
+<% end %>

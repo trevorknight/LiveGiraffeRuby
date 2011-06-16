@@ -1,4 +1,6 @@
 class ArtistsController < ApplicationController
+  before_filter :authenticate, :except => [:index, :show]
+
 
   # GET /artists
 
@@ -31,12 +33,12 @@ class ArtistsController < ApplicationController
 
   # GET /artists/1/edit
   def edit
-    @artist = Artist.find(params[:id])
+    @artist = current_user.artists.find(params[:id])
   end
 
   # POST /artists
   def create
-    @artist = Artist.new(params[:artist])
+    @artist = current_user.artists.new(params[:artist])
 	
     respond_to do |format|
       if @artist.save
@@ -49,7 +51,7 @@ class ArtistsController < ApplicationController
 
   # PUT /artists/1
   def update
-    @artist = Artist.find(params[:id])
+    @artist = current_user.artists.find(params[:id])
 
     respond_to do |format|
       if @venue.update_attributes(params[:venue])
@@ -62,7 +64,7 @@ class ArtistsController < ApplicationController
 
   # DELETE /artists/1
   def destroy
-    @artist = Artist.find(params[:id])
+    @artist = current_user.artists.find(params[:id])
     @artist.destroy
 
     respond_to do |format|

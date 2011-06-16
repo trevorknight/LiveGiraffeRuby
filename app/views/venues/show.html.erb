@@ -12,6 +12,6 @@
   <%= link_to 'website', @venue.website %>
 </p>
 
-
-<%= link_to 'Edit', edit_venue_path(@venue) %> |
-<%= link_to 'Back', venues_path %>
+<% if @venue.owned_by? current_user %>
+  <%= link_to 'Edit', edit_venue_path(@venue) %>
+<% end %>
