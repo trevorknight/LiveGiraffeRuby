@@ -32,4 +32,4 @@ gem 'mechanize'
 # group :development, :test do
 #   gem 'webrat'
 # end
-
+gem 'htmlentities' # to help with html encoding/decoding
