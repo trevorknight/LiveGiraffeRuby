@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(:version => 20110616193748) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "website"
-    t.integer  "phone"
+    t.string  "phone"
     t.integer  "user_id"
   end
 
