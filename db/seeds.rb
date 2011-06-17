@@ -7,6 +7,7 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 current_user = User.create({:email => "contact@livegiraffe.com", :password => 'qwertyuiop'})
+current_user.save
 
 current_user.venues.create([{:name => "Metropolis", :address => "59 Ste. Catherine St. E., Montréal, QC", :website => "http://www.montrealmetropolis.ca/", :phone => 8003614595},
 {:name => "Le Divan Orange", :address => "4234 boul. St-Laurent, Montréal, QC", :website => "http://divanorange.org/", :phone => 5148409090},
