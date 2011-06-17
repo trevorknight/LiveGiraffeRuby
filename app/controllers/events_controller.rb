@@ -22,7 +22,7 @@ class EventsController < ApplicationController
       #format.xml  { render :xml => @event }
     end
   end
-
+  
   # GET /events/new
   # GET /events/new.xml
   def new

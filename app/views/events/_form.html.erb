@@ -24,6 +24,14 @@
     <%= f.label :start_time %><br />
     <%= f.datetime_select :start_time %>
   </div>
+  <div class="field"
+    <%= f.label :cost %><br />
+    <%= f.text_field :cost %>
+  </div>
+  <div class="field"
+    <%= f.label "Ticket Link" %><br />
+    <%= f.text_field :ticket_url %>
+  </div>
   <div class="actions">
     <%= submit_or_cancel(f) %>
   </div>
