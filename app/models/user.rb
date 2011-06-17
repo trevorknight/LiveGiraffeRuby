@@ -1,4 +1,5 @@
 require 'digest'
+
 class User < ActiveRecord::Base
   attr_accessor :password
   
@@ -11,6 +12,9 @@ class User < ActiveRecord::Base
                        :if => :password_required?
   
   has_one :profile
+  has_many :events
+  has_many :venues
+  has_many :artists
   
   before_save :encrypt_new_password
   

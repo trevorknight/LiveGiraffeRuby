@@ -1,4 +1,6 @@
 class VenuesController < ApplicationController
+  before_filter :authenticate, :except => [:index, :show]
+
 
   # GET /venues
   def index
@@ -31,12 +33,12 @@ class VenuesController < ApplicationController
 
   # GET /venues/1/edit
   def edit
-    @venue = Venue.find(params[:id])
+    @venue = current_user.venues.find(params[:id])
   end
 
   # POST /venues
   def create
-    @venue = Venue.new(params[:venue])
+    @venue = current_user.venues.new(params[:venue])
 
     respond_to do |format|
       if @venue.save
@@ -49,7 +51,7 @@ class VenuesController < ApplicationController
 
   # PUT /venues/1
   def update
-    @venue = Venue.find(params[:id])
+    @venue = current_user.venues.find(params[:id])
 
     respond_to do |format|
       if @venue.update_attributes(params[:venue])
@@ -62,7 +64,7 @@ class VenuesController < ApplicationController
 
   # DELETE /venues/1
   def destroy
-    @venue = Venue.find(params[:id])
+    @venue = current_user.venues.find(params[:id])
     @venue.destroy
 
     respond_to do |format|

@@ -8,14 +8,9 @@ body, p, ol, ul, td {
 /* ------------------------------
 container styles
 ------------------------------ */
-
 #container
 {
-	margin: 1em auto;
-	width: 800px;
-	text-align: left;
-	background: #fff;
-	border: 3px solid #000;
+  width: 900px;
 }
 
 
@@ -26,7 +21,6 @@ header styles
 #header
 {
 	height: 120px;
-	width: 100%;
 	position: relative;
 	border-bottom: 3px solid #000;
 }
@@ -37,23 +31,9 @@ mainnav styles
 
 #mainnav
 {
-    border-bottom: 3px solid #000
+
 }
 
-#mainnav ul
-{
-	margin: 0 0 0 20px;
-	padding: 0;
-	list-style-type: none;
-	border-left: 1px solid #000;
-}
-
-#mainnav li
-{
-	display: inline;
-	padding: 0 10px;
-	border-right: 1px solid #000;
-}
 
 
 /* ------------------------------
@@ -78,11 +58,12 @@ contents styles
 	width: 550px;
 }
 
-.event_listing
-{ 
+  .event_listing
+    { 
     padding: 5px;
     border-bottom: 1px solid #000; 
-}
+  }
+
 
 /* ------------------------------
 footer styles
@@ -94,7 +75,7 @@ footer styles
 	color: #fff;
 	background: #000;
 	text-align: right;
-    font-size: 90%;
+  font-size: 90%;
 	padding: 1px
 }
 

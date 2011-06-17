@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   
   belongs_to :venue
+  belongs_to :user
   has_and_belongs_to_many :artists
 
   
@@ -21,13 +22,10 @@ class Event < ActiveRecord::Base
     self.venue_id = id
   end
   
-  # def venue_name
-    # venue.name if venue
-  # end
-  
-  # def venue_name=(name)
-    # self.venue = Venue.find_or_create_by_name(name) unless name.blank?
-  # end
+  def owned_by?(owner)
+    return false unless owner.is_a? User
+    user == owner
+  end
   
    
 end
