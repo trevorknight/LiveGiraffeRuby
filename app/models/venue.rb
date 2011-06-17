@@ -6,6 +6,8 @@ class Venue < ActiveRecord::Base
                    :length => { :minimum => 3 },
                    :uniqueness => true
   validates :address, :presence => true
+  
+  scope :where_name, lambda {|term| where("artists.name LIKE ?", "%#{term}%") }
 				   
   def owned_by?(owner)
     return false unless owner.is_a? User

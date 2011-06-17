@@ -1,11 +1,13 @@
 <p>
   <h2><%= @venue.name %></h2>
 <p>
-  <h3><%= @venue.address %></h3>
+  <h3><%= link_to @venue.address, "http://maps.google.com/?q=loc:#{@venue.address}" %></h3>
 <p>
-  <b>Upcoming shows</b>
+  <h3><%= number_to_phone(@venue.phone) %></h3>
+<p>
   <ul><% if @venue.events.any? %>
-    <% @venue.events.each do |event| %>
+    <b>Upcoming shows</b>
+    <% @venue.events.upcoming.each do |event| %>
       <li><% if event.artists.any? %><% event.artists.each do |artist| %><%= link_to artist.name, event %><br> <% end %><% end %></li>
     <% end %>
   <% end %></ul>
