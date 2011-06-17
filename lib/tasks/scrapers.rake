@@ -10,6 +10,9 @@ namespace :scrapers do
         form.filter_by_city_name = "Montreal"
         form.filter_by_category = "music"
         page = form.submit
+        
+        # ASSIGN USER  -- ADDED THIS
+        user = User.find_by_email('contact@livegiraffe.com')
 
         while(1) do #ugly, fix
 
@@ -36,13 +39,17 @@ namespace :scrapers do
                 puts "Couldn't match time :(" unless time
 
                 #STEP 2: sync DB
-                venue = Venue.find_or_create_by_name(venue_name.strip)
+                venue = Venue.find_or_create_by_name(venue_name.strip) 
                 venue.address = "scraped" unless venue.id?
+                venue.user_id = user.id unless venue.id?# ADDED THIS 
                 venue.save
                 
                 print "About to save artist: ", artist_name, ", venue: ", venue_name, "\n"
 
                 artist = Artist.find_or_create_by_name(artist_name.strip)
+                artist.user_id = user.id unless artist.id? #ADDED THIS
+                artist.save
+                
 
                 date = DateTime.parse(day.to_s + " " + month + " " + DateTime.now.year.to_s + " " + time);
                 event = Event.joins([:artists, :venue]).where('artists.id = ? AND venues.id = ?', artist, venue)
@@ -52,6 +59,7 @@ namespace :scrapers do
                     event.artists = [artist]
                     event.venue = venue
                     event.start_time = date
+                    event.user_id = user.id # ADDED THIS
                     event.save
                 end
             end
