@@ -33,4 +33,3 @@ gem 'mechanize'
 #   gem 'webrat'
 # end
 
-gem 'heroku'

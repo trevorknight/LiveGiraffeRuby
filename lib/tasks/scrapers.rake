@@ -46,12 +46,15 @@ namespace :scrapers do
 
                 date = DateTime.parse(day.to_s + " " + month + " " + DateTime.now.year.to_s + " " + time);
                 event = Event.joins([:artists, :venue]).where('artists.id = ? AND venues.id = ?', artist, venue)
+                
+                user = User.find_by_email("contact@livegiraffe.com")
 
                 if event.blank? 
                     event = Event.new
                     event.artists = [artist]
                     event.venue = venue
                     event.start_time = date
+                    event.user_id = user.id
                     event.save
                 end
             end
