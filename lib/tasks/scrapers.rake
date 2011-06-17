@@ -3,6 +3,7 @@ namespace :scrapers do
     task :evenko => :environment do
         require 'rubygems'
         require 'mechanize'
+        require 'htmlentities' #for html entity decoding
         agent = Mechanize.new
         page = agent.get('http://www.evenko.ca/en/show/events')
 
@@ -10,6 +11,8 @@ namespace :scrapers do
         form.filter_by_city_name = "Montreal"
         form.filter_by_category = "music"
         page = form.submit
+
+        coder = HTMLEntities.new
         
         user = User.find_by_email('contact@livegiraffe.com')
 
@@ -18,23 +21,23 @@ namespace :scrapers do
               #STEP 1: scrape page
               page.search(".listing-tr-thumb").each do |listing|
                 if listing.search(".show").inner_html.to_s() =~ /<a href=.*?>(.*)<\/a>.*<br>(.*)/
-                    artist_name = $1
-                    venue_name = $2
+                    artist_name = coder.decode($1)
+                    venue_name = coder.decode($2)
                 else
                     puts "Couldn't match show :("
                 end
 
-                city_name = listing.search(".city").inner_html.strip
+                city_name = coder.decode(listing.search(".city").inner_html.strip)
                 puts "Couldn't match city :(" unless city_name
 
                 if listing.search(".date").inner_html.to_s() =~ /(\w+).*"day">(\d+)/
-                    month = $1
-                    day = $2
+                    month = coder.decode($1)
+                    day = coder.decode($2)
                 else
                     puts "Couldn't match date :("
                 end
 
-                time = listing.search(".time").inner_html.strip
+                time = coder.decode(listing.search(".time").inner_html.strip)
                 puts "Couldn't match time :(" unless time
 
                 #STEP 2: sync DB
