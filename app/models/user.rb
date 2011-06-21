@@ -2,6 +2,7 @@ require 'digest'
 
 class User < ActiveRecord::Base
   attr_accessor :password
+  attr_accessor :profile_name
   
   validates :email, :uniqueness => true, 
                     :length => { :within => 5..50 },
@@ -17,9 +18,23 @@ class User < ActiveRecord::Base
   has_many :artists
   
   before_save :encrypt_new_password
+  before_save :downcase_email
+  after_save :save_profile_name
+  before_validation :downcase_email
+  
+  def downcase_email
+    self.email.downcase!
+  end
+  
+  def save_profile_name
+    self.profile = Profile.find_or_create_by_user_id(self.id)
+    self.profile.name = profile_name
+    self.profile.save
+  end
   
   def self.authenticate(email, password)
-    user = find_by_email(email)
+    email.downcase!
+    user = User.find_by_email(email)
     return user if user && user.authenticated?(password)
   end
   

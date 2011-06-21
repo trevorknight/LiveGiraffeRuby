@@ -7,9 +7,8 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user])
-    @user.profile = Profile.create
     if @user.save
-      redirect_to root, :notice => 'User successfully added.'
+      redirect_to new_session_path, :notice => 'User successfully added.'
     else
       render :action => 'new'
     end
