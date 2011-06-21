@@ -44,7 +44,7 @@ class ArtistsController < ApplicationController
       if @artist.save
         format.html { redirect_to(new_event_path, :notice => 'Artist was successfully created.') }
       else
-        render :action => "new"
+        format.html { render :action => "new" }
       end
     end
   end
@@ -52,9 +52,8 @@ class ArtistsController < ApplicationController
   # PUT /artists/1
   def update
     @artist = current_user.artists.find(params[:id])
-
     respond_to do |format|
-      if @venue.update_attributes(params[:venue])
+      if @artist.update_attributes(params[:artist])
         format.html { redirect_to(@artist, :notice => 'Artist was successfully updated.') }
       else
         format.html { render :action => "edit" }
@@ -66,7 +65,6 @@ class ArtistsController < ApplicationController
   def destroy
     @artist = current_user.artists.find(params[:id])
     @artist.destroy
-
     respond_to do |format|
       format.html { redirect_to(artists_url) }
     end
