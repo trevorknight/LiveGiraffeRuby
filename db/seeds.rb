@@ -6,7 +6,7 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-user = User.find_or_create_by_email({:email => "contact@livegiraffe.com", :password => 'qwertyuiop', :profile_name => "Live Giraffe"})
+user = User.create({:email => "contact@livegiraffe.com", :password => 'qwertyuiop', :profile_name => "Live Giraffe"})
 
 
 
