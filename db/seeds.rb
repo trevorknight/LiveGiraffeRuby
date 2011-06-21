@@ -14,7 +14,7 @@ user.venues.create([
 {:name => "Le Divan Orange", :address => "4234 boul. St-Laurent, Montréal, QC", :website => "http://divanorange.org/", :phone => "5148409090"},
 {:name => "Il Motore", :address => "179 Rue Jean-Talon O, Montréal, QC", :website => "http://www.ilmotore.ca/"},
 {:name => "Casa Del Popolo", :address => "4873 boul. St-Laurent, Montréal, QC", :website => "http://www.casadelpopolo.com/", :phone => "5142843804"},
-{:name => "La Sala Rosa", :address => "4848 boul. St-Laurent, Montréal, QC", :website => "http://www.casadelpopolo.com/", :phone => "5142840122"},
+{:name => "La Sala Rossa", :address => "4848 boul. St-Laurent, Montréal, QC", :website => "http://www.casadelpopolo.com/", :phone => "5142840122"},
 {:name => "The Bell Centre", :address => "1909 avenue des Canadiens-de-Montréal, Montréal, QC", :website => "http://www.centrebell.ca", :phone => "5149322582"},
 {:name => "Barfly", :address => "4062 boul. St-Laurent, Montréal, QC", :website => "http://www.myspace.com/barflymtl", :phone => "5142846665"},
 {:name => "Hemisphere Gauche", :address => "221 Beaubien E, Montréal, QC", :website => "http://www.hemispheregauche.com/", :phone => "5142786693"},
