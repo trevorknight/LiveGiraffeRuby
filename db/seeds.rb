@@ -6,11 +6,8 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-user = User.find_by_email("contact@livegiraffe.com") 
-user ||= User.create({:email => "contact@livegiraffe.com", :password => 'qwertyuiop', :profile_name => "Live Giraffe"})
-
-
-
+# user = User.find_by_email("contact@livegiraffe.com") 
+user = User.create({:email => "contact@livegiraffe.com", :password => 'qwertyuiop', :profile_name => "Live Giraffe"})
 
 user.venues.create([
 {:name => "Metropolis", :address => "59 Ste. Catherine St. E, Montréal, QC", :website => "http://www.montrealmetropolis.ca/", :phone => "8003614595"},
