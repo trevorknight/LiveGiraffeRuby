@@ -91,5 +91,5 @@ user.venues.create([
 {:name => "Le Belmont sur le Boulevard", :address => "4483 St-Laurent, Montréal, QC", :website => "http://www.lebelmont.com", :phone => "5148458443"},
 {:name => "Biosphere", :address => "160 Tour-de-l'Isle, Montréal, QC", :website => "http://www.ec.gc.ca/biosphere/", :phone => "5142835000"},
 {:name => "Hippodrome", :address => "7440 Décarie, Montréal, QC"},
-{:name => "CEPSUM", :address => "2050 Édouard-Montpetit, Montréal, QC", :website => "http://www.cepsum.umontreal.ca/"},
+{:name => "CEPSUM", :address => "2050 Édouard-Montpetit, Montréal, QC", :website => "http://www.cepsum.umontreal.ca/"}
 ])
