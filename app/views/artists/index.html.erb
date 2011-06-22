@@ -1,20 +1,26 @@
-<h1>All artists</h1>
+<%= render "popular_artists" %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Next Show</th>
-  </tr>
+<div id="contents"> 
 
-<% @artists.each do |artist| %>
-  <tr>
-    <td><%= link_to artist.name, artist %></td>
-	  <td><% event = artist.events.upcoming.first %>
-          <%= link_to event.start_time.to_formatted_s(:short) + ' at ' + event.venue.name.to_s, event_path(event.id) unless event.nil?%><br>
-  </tr>
-<% end %>
-</table>
+  <h1>All artists</h1>
 
-<br />
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Next Show</th>
+    </tr>
 
-<%= link_to 'New Artist', new_artist_path %>
+  <% @artists.each do |artist| %>
+    <tr>
+      <td><%= link_to artist.name, artist %></td>
+      <td><% event = artist.events.upcoming.first %>
+            <%= link_to event.start_time.to_formatted_s(:short) + ' at ' + event.venue.name.to_s, event_path(event.id) unless event.nil?%><br>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+
+  <%= link_to 'New Artist', new_artist_path %>
+
+</div>

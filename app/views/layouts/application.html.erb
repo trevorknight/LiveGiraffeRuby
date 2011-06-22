@@ -11,12 +11,9 @@
 <div id="container">
   <%= render "layouts/header" %>
   <%= render "layouts/nav_bar" %>
-  <%= render "layouts/side_bar" %>
-  <div id="contents">
-    <%= content_tag :p, notice, :class => 'notice' if notice.present? %>
-    <%= content_tag :p, alert, :class => 'alert' if alert.present? %>
-    <%= yield %>
-  </div>
+  <%= content_tag :p, notice, :class => 'notice' if notice.present? %>
+  <%= content_tag :p, alert, :class => 'alert' if alert.present? %>
+  <%= yield %>
   <%= render "layouts/footer" %>
 </div>
 

@@ -1,21 +1,25 @@
-<p>
-  <h2>
-    <% if @event.artists.any? %> 
-      <% @event.artists.each do |artist| %>
-        <%= link_to artist.name, artist %><br>
-      <% end %>
-    <% end %>
-  </h2>
-  <h3><%= link_to @event.venue.name, @event.venue %></h3>
-  <h3><%= @event.start_time.to_formatted_s(:short) %></h3>
-  <% if @event.cost %>
-    Cost: <%= number_to_currency(@event.cost) %><br \>
-  <% end %>
-  <% if @event.ticket_url %>
-    <%= link_to 'Tickets', @event.ticket_url %>
-  <% end %>
-</p>
+<div id="contents">
 
-<% if @event.owned_by? current_user %>
-  <%= link_to 'Edit', edit_event_path(@event) %>
-<% end %>
+  <p>
+    <h2>
+      <% if @event.artists.any? %> 
+        <% @event.artists.each do |artist| %>
+          <%= link_to artist.name, artist %><br>
+        <% end %>
+      <% end %>
+    </h2>
+    <h3><%= link_to @event.venue.name, @event.venue %></h3>
+    <h3><%= @event.start_time.to_formatted_s(:short) %></h3>
+    <% if @event.cost %>
+      Cost: <%= number_to_currency(@event.cost) %><br \>
+    <% end %>
+    <% if @event.ticket_url %>
+      <%= link_to 'Tickets', @event.ticket_url %>
+    <% end %>
+  </p>
+
+  <% if @event.owned_by? current_user %>
+    <%= link_to 'Edit', edit_event_path(@event) %>
+  <% end %>
+
+</div>

@@ -56,8 +56,13 @@ header styles
 {
   float: left;
 }
-
-
+/* ------------------------------
+nav_bar
+------------------------------ */
+#nav_bar
+{
+  padding: 0px 50px 10px;
+}
 
 /* ------------------------------
 side bar
@@ -68,7 +73,8 @@ side bar
 	width: 200px;
 	padding-left: 15px;
 	padding-right: 15px;
-	border-right: 1px
+  font-size: 85%;
+  border-right: 1px solid #000
 }
 
 /* ------------------------------
@@ -78,7 +84,7 @@ contents styles
 #contents
 {
 	float: right;
-	width: 550px;
+	width: 650px;
 }
 
   .event_listing
