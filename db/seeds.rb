@@ -6,7 +6,8 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-user = User.create({:email => "contact@livegiraffe.com", :password => 'qwertyuiop', :profile_name => "Live Giraffe"})
+user = User.find_by_email("contact@livegiraffe.com") 
+user ||= User.create({:email => "contact@livegiraffe.com", :password => 'qwertyuiop', :profile_name => "Live Giraffe"})
 
 
 
@@ -17,7 +18,7 @@ user.venues.create([
 {:name => "Il Motore", :address => "179 Rue Jean-Talon O, Montréal, QC", :website => "http://www.ilmotore.ca/"},
 {:name => "Casa Del Popolo", :address => "4873 boul. St-Laurent, Montréal, QC", :website => "http://www.casadelpopolo.com/", :phone => "5142843804"},
 {:name => "La Sala Rossa", :address => "4848 boul. St-Laurent, Montréal, QC", :website => "http://www.casadelpopolo.com/", :phone => "5142840122"},
-{:name => "The Bell Centre", :address => "1909 avenue des Canadiens-de-Montréal, Montréal, QC", :website => "http://www.centrebell.ca", :phone => "5149322582"},
+{:name => "Centre Bell Centre", :address => "1909 avenue des Canadiens-de-Montréal, Montréal, QC", :website => "http://www.centrebell.ca", :phone => "5149322582"},
 {:name => "Barfly", :address => "4062 boul. St-Laurent, Montréal, QC", :website => "http://www.myspace.com/barflymtl", :phone => "5142846665"},
 {:name => "Hemisphere Gauche", :address => "221 Beaubien E, Montréal, QC", :website => "http://www.hemispheregauche.com/", :phone => "5142786693"},
 {:name => "Bistro de Paris", :address => "4536 St-Denis, Montréal, QC", :website => "http://www.myspace.com/bistrodeparis", :phone => "5148455564"},
@@ -64,28 +65,31 @@ user.venues.create([
 {:name => "L'absinthe", :address => "1738 St-Denis, Montréal, QC", :website => "http://www.myspace.com/labsynthe", :phone => "5142851738"},
 {:name => "House of Jazz", :address => "2060 Aylmer, Montréal, QC", :website => "http://www.houseofjazz.ca/", :phone => "5148428656"},
 {:name => "Parc Jean Drapeau", :address => "Jean-Drapeau, Montréal, QC", :website => "http://www.parcjeandrapeau.com/", :phone => "5148726120"},
-{:name => "Cabaret du Mile End", :address => "5240 avenue du Parc, Montréal, QC", :website => "http://www.lemileend.org/joomla/", :phone => "5144391886"},
+{:name => "Le Cabaret du Mile End", :address => "5240 avenue du Parc, Montréal, QC", :website => "http://www.lemileend.org/joomla/", :phone => "5144391886"},
 {:name => "Quai des brumes", :address => "4481 St-Denis, Montréal, QC", :website => "http://www.quaidesbrumes.ca/", :phone => "5144990467"},
 {:name => "Piranha Bar", :address => "680 St-Catherine O, Montréal, QC", :website => "http://www.myspace.com/lepiranhabar", :phone => "5149960761"},
 {:name => "Corona", :address => "2490 Notre-Dame O, Montréal, QC", :website => "http://www.theatrecorona.com/", :phone => "5149312088"},
 {:name => "L'Astral", :address => "305 St-Catherine O, Montréal, QC", :website => "http://www.sallelastral.com/", :phone => "5142888882"},
 {:name => "Monument National", :address => "1182 St-Laurent, Montréal, QC", :website => "http://monument-national.qc.ca", :phone => "5148719883"},
 {:name => "Lion d'Or", :address => "1676 rue Ontario E, Montréal, QC", :website => "ttp://www.cabaretliondor.com", :phone => "5145980709"},
-{:name => "Bain Mathieu", :address => "2915 rue Ontario E, Montréal, QC", :website => "http://www.bainmathieu.ca/", :phone => "5145233265"},
+{:name => "Bain Mathieu", :address => "2915, rue Ontario E, Montréal, QC", :website => "http://www.bainmathieu.ca/", :phone => "5145233265"},
 {:name => "Société des Arts Technologiques (S.A.T.)", :address => "1201 St-Laurent, Montréal, QC", :website => "http://www.sat.qc.ca/index.php?lang=en", :phone => "5148442033"},
-{:name => "Théâtre Plaza", :address => "6505 St-Hubert, Montréal, QC", :website => "http://www.theatreplaza.org/", :phone => "5142786419"},
-{:name => "Théâtre Outremont", :address => "1248 Avenue Bernard O, Montréal, QC", :website => "http://www.theatreoutremont.ca/", :phone => "5144959944"},
+{:name => "Théâtre Plaza Theatre", :address => "6505 St-Hubert, Montréal, QC", :website => "http://www.theatreplaza.org/", :phone => "5142786419"},
+{:name => "Théâtre Outremont Theatre", :address => "1248 Avenue Bernard O, Montréal, QC", :website => "http://www.theatreoutremont.ca/", :phone => "5144959944"},
 {:name => "Saphir", :address => "3699 St-Laurent, Montréal, QC", :website => "http://www.saphirbar.com/", :phone => "5145071104"},
 {:name => "Ukrainian Federation", :address => "5213 Hutchison, Montréal, QC"},
 {:name => "Le Cagibi", :address => "5490 St-Laurent, Montréal, QC", :website => "http://www.lecagibi.ca/", :phone => "5145091199"},
-{:name => "Le Depanneur Cafe", :address => "206 Bernard O, Montréal, QC", :website => "http://www.ledepanneurcafe.com", :phone => "5142719357"},
+{:name => "Le Depanneur Café", :address => "206 Bernard O, Montréal, QC", :website => "http://www.ledepanneurcafe.com", :phone => "5142719357"},
 {:name => "Verre bouteille", :address => "2112 Mont-Royal E, Montréal, QC", :website => "http://www.verrebouteille.com/", :phone => "5145219409"},
 {:name => "Bistro a JoJo", :address => " 1627 St-Denis, Montréal, QC", :website => "http://www.bistroajojo.com/", :phone => "5148435015"},
 {:name => "Kafein", :address => "1429A Bishop, Montréal, QC", :website => "http://kafein.ca/", :phone => "5149046969"},
 {:name => "Espace la risée", :address => "1258 Rue Bélanger E, Montréal, QC", :website => "http://www.droledemonde.com/", :phone => "5149316630"},
-{:name => "L'escogriffe", :address => "4467 St-Denis, Montréal, QC", :website => "http://www.lescobar.com/", :phone => "5148427244"},
+{:name => "L'Esco Bar", :address => "4467 St-Denis, Montréal, QC", :website => "http://www.lescobar.com/", :phone => "5148427244"},
 {:name => "Conservatoire de musique de Montréal", :address => "4750 Henri Julien, Montréal, QC", :website => "http://www.conservatoire.gouv.qc.ca/", :phone => "5148734031"},
 {:name => "L'Escalier", :address => "552 St-Catherine E, Montréal, QC", :website => "http://www.lescalier-montreal.com/", :phone => "5146705812"},
 {:name => "L'Alizé", :address => "900 Ontario E, Montréal, QC", :website => "http://lalize.net/", :phone => "5148078895"},
 {:name => "Le Belmont sur le Boulevard", :address => "4483 St-Laurent, Montréal, QC", :website => "http://www.lebelmont.com", :phone => "5148458443"},
+{:name => "Biosphere", :address => "160 Tour-de-l'Isle, Montréal, QC", :website => "http://www.ec.gc.ca/biosphere/", :phone => "5142835000"},
+{:name => "Hippodrome", :address => "7440 Décarie, Montréal, QC"},
+{:name => "CEPSUM", :address => "2050 Édouard-Montpetit, Montréal, QC", :website => "http://www.cepsum.umontreal.ca/"},
 ])

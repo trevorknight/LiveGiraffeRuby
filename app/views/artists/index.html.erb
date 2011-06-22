@@ -10,7 +10,7 @@
   <tr>
     <td><%= link_to artist.name, artist %></td>
 	  <td><% event = artist.events.upcoming.first %>
-          <%= link_to event.start_time.to_formatted_s(:short) + ' at ' + event.venue.name.to_s, event_path(event.venue.id) unless event.nil?%><br>
+          <%= link_to event.start_time.to_formatted_s(:short) + ' at ' + event.venue.name.to_s, event_path(event.id) unless event.nil?%><br>
   </tr>
 <% end %>
 </table>
