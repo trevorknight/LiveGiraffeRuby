@@ -2,12 +2,12 @@
 
 <div id="contents">
     
-  <h1>All venues</h1>
+  <h1><%= t('general.all_venues') %></h1>
 
   <table>
     <tr>
-      <th>Name</th>
-      <th>Address</th>
+      <th><%= t('views.venues.name') %></th>
+      <th><%= t('views.venues.address') %></th>
     </tr>
 
   <% @venues.each do |venue| %>
@@ -19,7 +19,5 @@
   </table>
 
   <br />
-
-  <%= link_to 'New Venue', new_venue_path %>
 
 </div>

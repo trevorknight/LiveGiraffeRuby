@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
   attr_reader :artist_tokens
   attr_reader :venue_token
   
-  validates :start_time, :venue_id, :presence => true
+  validates :start_time, :venue_id, :artists, :presence => true
  
   default_scope order('events.start_time')
   scope :upcoming, lambda { where("events.start_time > ?", Time.now)}

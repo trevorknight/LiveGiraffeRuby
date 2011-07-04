@@ -5,10 +5,9 @@ class User < ActiveRecord::Base
   attr_accessor :profile_name
   
   validates :email, :uniqueness => true, 
-                    :length => { :within => 5..50 },
                     :format => { :with => /^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i }
   validates :password, :confirmation => true,
-                       :length => { :within => 4..20 },
+                       :length => { :minimum => 6 },
                        :if => :password_required?
   
   
@@ -23,7 +22,7 @@ class User < ActiveRecord::Base
   before_validation :downcase_email
   
   def downcase_email
-    self.email.downcase!
+    self.email.downcase! unless self.email.nil?
   end
   
   def save_profile_name

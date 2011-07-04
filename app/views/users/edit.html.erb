@@ -1,5 +1,31 @@
-
+v
 <div id="contents">
-  <h1>Editing user</h1>
-  <%= render 'form' %>
+  <h1><%= t('views.users.edit_user') %></h1>
+  <%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= t('general.there_is_an_error') %></h2>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div class="field">
+    <%= f.label t('views.users.email') %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label t('views.users.password') %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label t('views.users.password_confirmation') %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="actions">
+    <%= submit_or_cancel(f) %>
+  </div>
+<% end %>
 </div>

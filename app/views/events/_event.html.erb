@@ -7,5 +7,5 @@
   </h2>
   <p>at  <%= link_to event.venue.name, event.venue unless event.venue.nil? %><br />
   <%= event.start_time.to_formatted_s(:short) %><br />
-  <%= link_to 'More Info...', event %> 
+  <%= link_to t('views.events.more_info'), event %> 
 </div>

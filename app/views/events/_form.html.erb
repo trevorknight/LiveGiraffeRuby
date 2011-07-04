@@ -1,8 +1,7 @@
 <%= form_for(@event) do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
+      <h2><%= t('general.there_is_an_error') %></h2>
       <ul>
       <% @event.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -13,23 +12,23 @@
   <div class="field">
     <%= f.label :artist_tokens, "Artists" %><br />
     <%= f.text_field :artist_tokens, "data-pre" => @event.artists.to_json %>
-	<p>Artist missing? Click <%= link_to "here!", new_artist_path %></p>
+	<p><%= link_to t('views.events.artist_missing'), new_artist_path %></p>
   </div>
   <div class="field">
-    <%= f.label :venue_token, "Venue" %><br />
+    <%= f.label :venue_token, t('general.venue') %><br />
     <%= f.text_field :venue_token, "data-pre" => "["+@event.venue.to_json+"]" %>
-	<p>Venue missing? Click <%= link_to "here!", new_venue_path %></p>
+	<p><%= link_to t('views.events.venue_missing'), new_venue_path %></p>
   </div>
   <div class="field">
-    <%= f.label :start_time %><br />
+    <%= f.label t('views.events.start_time') %><br />
     <%= f.datetime_select :start_time %>
   </div>
   <div class="field"
-    <%= f.label :cost %><br />
+    <%= f.label t('views.events.cost') %><br />
     <%= f.text_field :cost %>
   </div>
   <div class="field"
-    <%= f.label "Ticket Link" %><br />
+    <%= f.label t('views.events.ticket_link') %><br />
     <%= f.text_field :ticket_url %>
   </div>
   <div class="actions">

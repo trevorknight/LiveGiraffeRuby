@@ -42,7 +42,7 @@ class ArtistsController < ApplicationController
 	
     respond_to do |format|
       if @artist.save
-        format.html { redirect_to(new_event_path, :notice => 'Artist was successfully created.') }
+        format.html { redirect_to(new_event_path, :notice => t('controllers.artists.created')) }
       else
         format.html { render :action => "new" }
       end
@@ -54,7 +54,7 @@ class ArtistsController < ApplicationController
     @artist = current_user.artists.find(params[:id])
     respond_to do |format|
       if @artist.update_attributes(params[:artist])
-        format.html { redirect_to(@artist, :notice => 'Artist was successfully updated.') }
+        format.html { redirect_to(@artist, :notice => t('controllers.artists.updated')) }
       else
         format.html { render :action => "edit" }
       end
