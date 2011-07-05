@@ -20,8 +20,8 @@ class ProfilesController < ApplicationController
   
   def update
     @profile = current_user.profile
-    if @profile.update_attributes(params[:user])
-      redirect_to events_path, :notice => 'Profile updated successfully.'
+    if @profile.update_attributes(params[:profile])
+      redirect_to @profile, :notice => t('controllers.profiles.updated')
     else
       render :action => 'edit'
     end

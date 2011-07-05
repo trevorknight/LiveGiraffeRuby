@@ -38,5 +38,8 @@ module Ligi
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    
+    # Setting the locale
+    config.i18n.default_locale = 'fr-ca'
   end
 end

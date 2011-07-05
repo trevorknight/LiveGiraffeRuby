@@ -2,25 +2,23 @@
 
 <div id="contents"> 
 
-  <h1>All artists</h1>
+  <h1><%= t('general.all_artists') %></h1>
 
   <table>
     <tr>
-      <th>Name</th>
-      <th>Next Show</th>
+      <th><%= t('general.artist') %></th>
+      <th><%= t('views.artists.next_show') %></th>
     </tr>
 
   <% @artists.each do |artist| %>
     <tr>
       <td><%= link_to artist.name, artist %></td>
       <td><% event = artist.events.upcoming.first %>
-            <%= link_to event.start_time.to_formatted_s(:short) + ' at ' + event.venue.name.to_s, event_path(event.id) unless event.nil?%><br>
+            <%= link_to event.start_time.to_formatted_s(:short) + event.venue.name.to_s, event_path(event.id) unless event.nil?%><br>
     </tr>
   <% end %>
   </table>
 
   <br />
-
-  <%= link_to 'New Artist', new_artist_path %>
 
 </div>

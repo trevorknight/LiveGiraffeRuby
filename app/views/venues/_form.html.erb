@@ -1,8 +1,7 @@
 <%= form_for(@venue) do |f| %>
   <% if @venue.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@venue.errors.count, "error") %> prohibited this venue from being saved:</h2>
-
+      <h2><%= t('general.there_is_an_error') %></h2>
       <ul>
       <% @venue.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -12,19 +11,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label t('views.venues.name') %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :address %><br />
+    <%= f.label t('views.venues.address') %><br />
     <%= f.text_field :address %>
   </div>
   <div class="field">
-    <%= f.label :website %><br />
+    <%= f.label t('views.venues.website') %><br />
     <%= f.text_field :website %>
   </div>
   <div class="field">
-    <%= f.label :phone %><br />
+    <%= f.label t('views.venues.phone') %><br />
     <%= f.text_field :phone %>
   </div>
   <div class="actions">

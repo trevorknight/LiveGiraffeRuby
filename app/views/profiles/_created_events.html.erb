@@ -1,10 +1,10 @@
 <div id = "side_bar">
   
-  <%= "When you add events to Live Giraffe, you will see them here." unless @profile.user.events.any? %>
+  <%= t('views.profiles.create_events_msg') unless @profile.user.events.any? %>
 
   
   <% if @profile.user.events.any? %>
-    <h2> Events I created</h2>
+    <h2><%= t('views.profiles.events_I_created') %></h2>
       <%= render @profile.user.events  %>
   <% end %>
   

@@ -2,25 +2,25 @@
   <p>
     <h2><%= @artist.name %></h2>
   <p>
-    Upcoming shows:<br>
-    <i><%= "None" unless @artist.events.upcoming.any? %></i>
+    <%= t('views.artists.upcoming_shows') %><br>
+    <i><%= t('views.artists.none') unless @artist.events.upcoming.any? %></i>
     <ul>
       <% @artist.events.upcoming.each do |event| %>
-        <li><%= link_to (event.start_time.to_formatted_s(:short) + ' at ' + event.venue.name), event %></li>
+        <li><%= link_to (event.start_time.to_formatted_s(:short) + ', ' + event.venue.name), event %></li>
       <% end %>
     </ul>
   </p>
   <p>
-    Past shows:<br>
-    <i><%= "None" unless @artist.events.past.any? %></i>
+    <%= t('views.artists.past_shows') %><br>
+    <i><%= t('views.artists.none') unless @artist.events.past.any? %></i>
     <ul>
       <% @artist.events.past.each do |event| %>
-        <li><%= link_to (event.start_time.to_formatted_s(:short) + ' at ' + event.venue.name), event %></li>
+        <li><%= link_to (event.start_time.to_formatted_s(:short) + ', ' + event.venue.name), event %></li>
       <% end %>
     </ul>
   </p>
 
   <% if @artist.owned_by? current_user %>
-    <%= link_to 'Edit', edit_artist_path(@artist) %>
+    <%= link_to t('general.edit'), edit_artist_path(@artist) %>
   <% end %>
 </div>

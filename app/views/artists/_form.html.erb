@@ -1,8 +1,7 @@
 <%= form_for(@artist) do |f| %>
   <% if @artist.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@artist.errors.count, "error") %> prohibited this artist from being saved:</h2>
-
+      <h2><%= t('general.there_is_an_error') %></h2>
       <ul>
       <% @artist.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -12,7 +11,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label t('general.artist_name') %><br />
     <%= f.text_field :name %>
   </div>
   <div class="actions">
