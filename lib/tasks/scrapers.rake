@@ -120,7 +120,8 @@ namespace :scrapers do
 
                 start_time = DateTime.parse(date_matches[2].to_s + " " + date_matches[1] + " " + DateTime.now.year.to_s + " " + time); #TODO Fix year logic
                 start_time_str = start_time.to_formatted_s(:db).gsub('%', '\%').gsub('_', '\_') + '%'
-                event = Event.joins([:artists]).where('artists.id = ? AND events.venue_id = ? AND events.start_time like ?', artist.id, venue.id, start_time_str)
+#                event = Event.joins([:artists]).where('artists.id = ? AND events.venue_id = ? AND events.start_time like ?', artist.id, venue.id, start_time_str)
+                event = Event.find(:all, :joins => [:artists], :conditions => {'artists.id' => artist.id, 'events.venue_id' => venue.id, 'events.start_time' => start_time..start_time+1.second})
 
                 #puts "Retrieved event with params artistid: #{artist.id}, venueid: #{venue.id}, start time: #{start_time_str}"
                 #puts "Inspecting event: #{event.inspect}"
