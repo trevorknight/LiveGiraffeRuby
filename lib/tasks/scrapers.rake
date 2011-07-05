@@ -4,6 +4,7 @@ namespace :scrapers do
         require 'rubygems'
         require 'mechanize'
         require 'htmlentities' #for html entity decoding
+        puts("*************")
         agent = Mechanize.new
         scraper = "evenko.ca"
         page = agent.get('http://www.evenko.ca/en/show/events')
@@ -103,26 +104,26 @@ namespace :scrapers do
                     venue.phone = venue_phone
                     venue.website = venue_website
                     venue.user_id = user.id
-                    puts "calling venue.save for venue #{venue.name}"
+                    #puts "calling venue.save for venue #{venue.name}"
                     venue.save
                 end
-                puts "venue is #{venue.inspect}"
-                puts "venue id is #{venue.id}"
-                puts "user id is #{user.id}"
+                #puts "venue is #{venue.inspect}"
+                #puts "venue id is #{venue.id}"
+                #puts "user id is #{user.id}"
 
                 artist = Artist.find_or_create_by_name(artist_name.strip)
                 artist.user_id = user.id unless artist.id? 
                 artist.save
 
-                puts "artist is #{artist.inspect}"
-                puts "artist id is #{artist.id}"
+                #puts "artist is #{artist.inspect}"
+                #puts "artist id is #{artist.id}"
 
                 start_time = DateTime.parse(date_matches[2].to_s + " " + date_matches[1] + " " + DateTime.now.year.to_s + " " + time); #TODO Fix year logic
                 start_time_str = start_time.to_formatted_s(:db).gsub('%', '\%').gsub('_', '\_') + '%'
                 event = Event.joins([:artists]).where('artists.id = ? AND events.venue_id = ? AND events.start_time like ?', artist.id, venue.id, start_time_str)
 
-                puts "Retrieved event with params artistid: #{artist.id}, venueid: #{venue.id}, start time: #{start_time_str}"
-                puts "Inspecting event: #{event.inspect}"
+                #puts "Retrieved event with params artistid: #{artist.id}, venueid: #{venue.id}, start time: #{start_time_str}"
+                #puts "Inspecting event: #{event.inspect}"
 
                 if event.blank? 
                     event = Event.new

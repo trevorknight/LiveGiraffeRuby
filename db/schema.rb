@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110617200332) do
+ActiveRecord::Schema.define(:version => 20110630195604) do
 
   create_table "artists", :force => true do |t|
     t.string   "name"
@@ -33,11 +33,21 @@ ActiveRecord::Schema.define(:version => 20110617200332) do
     t.integer  "user_id"
     t.string   "scraper"
     t.text     "ticket_url"
+    t.integer  "festival_id"
   end
 
   create_table "events_profiles", :id => false, :force => true do |t|
     t.integer "event_id"
     t.integer "profile_id"
+  end
+
+  create_table "festivals", :force => true do |t|
+    t.string   "name"
+    t.string   "website"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "start_time"
+    t.date     "end_time"
   end
 
   create_table "profiles", :force => true do |t|
@@ -70,7 +80,7 @@ ActiveRecord::Schema.define(:version => 20110617200332) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "website"
-    t.string  "phone"
+    t.string   "phone"
     t.integer  "user_id"
   end
 
