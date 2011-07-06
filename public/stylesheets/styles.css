@@ -42,7 +42,7 @@ header styles
 #header
 {
   color: #B54E13;
-	height: 100px;
+	height: 200px;
 	border-bottom: 2px solid #000;
 }
 
@@ -61,6 +61,7 @@ nav_bar
 ------------------------------ */
 #nav_bar
 {
+  float: left;
   padding: 0px 50px 10px;
 }
 

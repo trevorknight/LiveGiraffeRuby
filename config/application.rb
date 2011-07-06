@@ -40,6 +40,6 @@ module Ligi
     config.filter_parameters += [:password]
     
     # Setting the locale
-    config.i18n.default_locale = 'fr-ca'
+    config.i18n.default_locale = 'frca'
   end
 end

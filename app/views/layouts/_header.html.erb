@@ -1,8 +1,10 @@
 ﻿<div id="header">
     <div id="title">
-      <h1 align="center"><%= t('general.live_giraffe')%> Beta</h1>
+      <img src="images/logo3.png" alt="Live Giraffe Logo">
     </div>
     <div id="language_bar">
-      english | français
+      <%= link_to "LG English", url_for(:locale => 'enlg') unless I18n.locale == :enlg %><br />
+      <%= link_to "Français", url_for(:locale => 'frca') unless I18n.locale == :frca %><br />
+      <%= link_to "English", url_for(:locale => 'enca') unless I18n.locale == :enca %>
     </div>
 </div>
