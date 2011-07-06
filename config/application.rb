@@ -41,5 +41,6 @@ module Ligi
     
     # Setting the locale
     config.i18n.default_locale = 'frca'
+    config.locale = 'frca'
   end
 end

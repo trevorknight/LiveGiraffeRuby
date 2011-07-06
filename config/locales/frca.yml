@@ -18,8 +18,6 @@
     my_stuff: "My Stuff"
     logout: "Logout"
     suggestions: "Suggestions? contact@livegiraffe.com"
-    
-    
   views:
     artists:
       artists_popular_today: "Artists popular today"
