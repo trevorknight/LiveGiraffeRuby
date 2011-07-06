@@ -46,22 +46,37 @@ header styles
 	border-bottom: 2px solid #000;
 }
 
-#header #language_bar 
-{
-  float: right;
-  color: #c33;
-}
+#header #logo
+   {
+    float: left;
+  }
 
-#header #title 
+#header #language_bar 
+    {
+    float: right;
+    color: #f00;
+    
+  }
+  
+#header #language_bar a 
+    {
+  color: #d22;
+  text-decoration: none;
+  }
+
+#header #language_bar a:hover 
 {
-  float: left;
+  background-color:#d22;
+  color:#FFFFFF;
 }
+  
+
 /* ------------------------------
 nav_bar
 ------------------------------ */
 #nav_bar
 {
-  float: left;
+  clear: both;
   padding: 0px 50px 10px;
 }
 
