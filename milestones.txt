@@ -1,0 +1,37 @@
+Milestones:
+
+Functionality:
+- artist before_create filter (with verification) to query Echonest: check name, fill-in URLs, bio(?)
+- User ability to add events to calendar
+- clean mental model
+- display popular
+- add headliner
+- points system
+- radio
+- phone app
+
+Data:
+- scraper architecture
+- crowd sourcing -- how to get edits/flags, how to allow authority to claim venues/artists/events
+- build more scrapers (go through venue list)
+
+Business:
+- Talk to person at YES
+- Research grants/startup incubators/funding
+- Venue and artist outreach plan
+- Marketing drive
+
+
+TODAY
+- to do and milestones into git
+- change registration addresses, names
+
+FRIDAY NEXT WEEK
+- artist before_create filter (with verification) to query Echonest: check name, fill-in URLs, bio(?) D
+- User ability to add events to calendar T
+- clean mental model T
+
+END OF JULY
+- Talk to person at YES, research funding sources
+- headliners, popular, festival links
+- logo

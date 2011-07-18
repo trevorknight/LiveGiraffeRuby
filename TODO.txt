@@ -1,0 +1,38 @@
+Things to do:
+
+***Tweet everyday***
+
+Venues:
+Olympia > Olympia Montreal
+Gesu > Ampitheatre de Gesu?
+
+==Functionality==
+- allow users to add events to their profiles
+- search
+- French
+- Artist callback to query EchoNest API for artist name, URLs
+- Figure out how to treat accented characters the same in forms and search (theatre and théâtre)
+- Dependencies: when delete an artist or venue, should the events be removed also?
+- auto login when create new account
+
+==Layout==
+- Venues and artists index: cleanup/make useful or scrap
+- 
+- colour schema (fun tool: http://kuler.adobe.com/)
+- change colors for tokeninput
+
+==Hosting==
+
+Set up heroku with domain
+forward livegirafe to livegiraffe
+Change from SQLite to ? (David)
+
+==Scraper==
+- Check for event existence before writing
+- Add new scrapers, e.g. PopMontreal.
+- Work on scraper architecture
+
+==Questions==
+how to prevent people from taking our data?
+how to get rid of all pages we don't want to use e.g. /venues/index.html
+how to have custom URLS like "/venues/Metropolis" rather than "/venues/34"
