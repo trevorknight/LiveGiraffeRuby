@@ -1,23 +1,24 @@
 enlg:
   general:
     live_giraffe: "Live Giraffe"
-    cancel: "Cancel"
-    edit: "Edit"
+    cancel: "Nevermind!"
+    edit: "Fix this"
     or: " or "
     venue: "Venue"
     artist: "Artist"
-    artist_name: "Name"
-    there_is_an_error: "There is a problem."
-    all_events: "All Events"
-    all_venues: "All Venues"
+    artist_name: "Nom de Guerre:"
+    there_is_an_error: "Oh no!"
+    all_events: "All Shows"
+    all_venues: "All Places"
     all_artists: "All Artists"
-    login: "Login"
-    register: "Register"
-    to_add_or_edit_content: "to add something or keep a personal calendar"
-    add_something: "Add Something"
+    login: "Log in"
+    register: "Sign up"
+    to_add_or_edit_content: "to add shows or keep a calendar"
+    add_something: "Add a show"
     my_stuff: "My Stuff"
     logout: "Logout"
-    suggestions: "Suggestions? contact@livegiraffe.com"
+    suggestions: "Suggestions? Thoughts? contact@livegiraffe.com"
+    website: "Website"
     
     
   views:
@@ -42,8 +43,10 @@ enlg:
       upcoming_festivals: "Upcoming Festivals"
       edit_event: "Edit event"
       new_event: "New event"
+    festivals:
+      festival_info: "Festival Info"
     profiles:
-      events_I_created: "Events I Created"
+      events_I_created: "Shows I Shared"
       create_events_msg: "When you add events to Live Giraffe, you will see them here."
       name: "My name"
       edit_profile: "Edit profile"
@@ -55,7 +58,7 @@ enlg:
     users:
       email: "Email"
       password: "Password"
-      password_confirmation: "Password confirmation"
+      password_confirmation: "Password again please"
       edit_user: "Edit user"
       new_user: "New user"
     venues:

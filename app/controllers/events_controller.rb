@@ -4,7 +4,8 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.xml
   def index
-    @events = Event.all
+    @events = Event.upcoming
+    @festivals = Festival.upcoming
 
     respond_to do |format|
       format.html # index.html.erb

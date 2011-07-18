@@ -1,0 +1,11 @@
+<div id="side_bar">
+  <h2><%= t("views.festivals.festival_info") %></h2><br />
+  <%= @festival.start_time.strftime("%d %b") %> - <%= @festival.end_time.strftime("%d %b") %><br />
+  <%= link_to t("general.website"), @festival.website %>
+</div>
+
+
+<div id="contents">
+  <h1><%= @festival.name %></h1>
+  <%= render @festival.events %>
+</div>

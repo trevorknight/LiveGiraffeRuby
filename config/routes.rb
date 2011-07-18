@@ -7,6 +7,7 @@ Ligi::Application.routes.draw do
   resources :artists
   resources :users
   resources :profiles
+  resources :festivals
   resource :session
   match '/login' => "sessions#new", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout"

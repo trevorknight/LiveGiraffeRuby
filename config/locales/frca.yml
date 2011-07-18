@@ -18,6 +18,8 @@ frca:
     my_stuff: "My Stuff"
     logout: "Logout"
     suggestions: "Suggestions? contact@livegiraffe.com"
+    website: "Website"
+    
   views:
     artists:
       artists_popular_today: "Artists popular today"
@@ -40,6 +42,8 @@ frca:
       upcoming_festivals: "Upcoming Festivals"
       edit_event: "Edit event"
       new_event: "New event"
+    festivals:
+      festival_info: "Festival Info"
     profiles:
       events_I_created: "Events I Created"
       create_events_msg: "When you add events to Live Giraffe, you will see them here."

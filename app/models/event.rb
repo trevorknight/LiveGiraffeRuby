@@ -2,6 +2,7 @@ class Event < ActiveRecord::Base
   
   belongs_to :venue
   belongs_to :user
+  belongs_to :festival
   has_and_belongs_to_many :artists
   has_and_belongs_to_many :profiles
   

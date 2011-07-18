@@ -103,12 +103,42 @@ contents styles
 	width: 650px;
 }
 
-  .event_listing
-    { 
-    padding: 5px;
+  	.event_listing
+   { 
+    clear: both;
     border-bottom: 1px solid #000; 
+    width: 100%;
+    float: left;
+    }
+  
+    .artist_venue_container
+    {
+    float: left;
+    width: 80%;
+    height: 100%;
   }
-
+    .artist_block
+       {
+      float: left;
+      padding: 3px;
+      font-size: 150%;
+      width: 100%;
+    }
+    
+    .venue_block
+        {
+      float: left;
+      width: 100%;
+      font-size: 100%;
+    }
+    
+    .date_block
+       {
+       float: right;
+       padding-top: 10px;
+       text-align: center;
+       width:20%;
+    }
 
 /* ------------------------------
 footer styles

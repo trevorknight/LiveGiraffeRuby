@@ -1,11 +1,20 @@
 <div class="event_listing">
   
-  <h2>
-    <% event.artists.each do |artist| %>  
-	    <%= link_to artist.name, artist %><br>
-	  <% end %>
-  </h2>
-  <p>at  <%= link_to event.venue.name, event.venue unless event.venue.nil? %><br />
-  <%= event.start_time.to_formatted_s(:short) %><br />
-  <%= link_to t('views.events.more_info'), event %> 
+  <div class="date_block">
+    <b><%= event.start_time.strftime("%A") %></b><br />
+    <%= event.start_time.strftime("%d %b") %>
+  </div>
+  
+  <div class="artist_venue_container">
+    <div class="artist_block">
+      <% event.artists.each do |artist| %>  
+        <%= link_to artist.name, artist %><br>
+      <% end %>
+    </div>
+    
+    <div class="venue_block">
+      <p><%= link_to event.venue.name, event.venue unless event.venue.nil? %><br />
+    </div>
+  </div>  
+
 </div>
