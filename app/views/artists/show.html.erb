@@ -1,22 +1,18 @@
 <div id="contents">
   <p>
-    <h2><%= @artist.name %></h2>
-  <p>
-    <%= t('views.artists.upcoming_shows') %><br>
-    <i><%= t('views.artists.none') unless @artist.events.upcoming.any? %></i>
-    <ul>
-      <% @artist.events.upcoming.each do |event| %>
-        <li><%= link_to (event.start_time.to_formatted_s(:short) + ', ' + event.venue.name), event %></li>
-      <% end %>
-    </ul>
+    <h1><%= @artist.name %></h1>
+    <%= link_to t('general.edit'), edit_artist_path(@artist) if @artist.owned_by? current_user %>
   </p>
   <p>
-    <%= t('views.artists.past_shows') %><br>
+    <h2><%= t('views.artists.upcoming_shows') %></h2><br />
+    <i><%= t('views.artists.none') unless @artist.events.upcoming.any? %></i>
+      <%= render @artist.events.upcoming %>
+  </p>
+  <p>
+    <h2><%= t('views.artists.past_shows') %></h2><br />
     <i><%= t('views.artists.none') unless @artist.events.past.any? %></i>
     <ul>
-      <% @artist.events.past.each do |event| %>
-        <li><%= link_to (event.start_time.to_formatted_s(:short) + ', ' + event.venue.name), event %></li>
-      <% end %>
+      <% @artist.events.past %>
     </ul>
   </p>
 

@@ -2,7 +2,8 @@
   
   <div class="date_block">
     <b><%= event.start_time.strftime("%A") %></b><br />
-    <%= event.start_time.strftime("%d %b") %>
+    <%= event.start_time.strftime("%d %b") %><br /><br />
+    
   </div>
   
   <div class="artist_venue_container">
@@ -14,6 +15,8 @@
     
     <div class="venue_block">
       <p><%= link_to event.venue.name, event.venue unless event.venue.nil? %><br />
+      <%= event.show_cost %><br />
+      <%= link_to t('views.events.ticket_link'), event.ticket_url unless event.ticket_url.nil? %>
     </div>
   </div>  
 

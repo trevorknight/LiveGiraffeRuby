@@ -19,6 +19,7 @@ en:
     logout: "Logout"
     suggestions: "Suggestions? contact@livegiraffe.com"
     website: "Website"
+    free: "Free"
     
     
   views:
@@ -38,6 +39,7 @@ en:
       at_(venue): "at "
       ticket_link: "Ticket link"
       tickets: "Tickets"
+      tickets_from: "Tickets from "
       artist_missing: "Artist missing?"
       venue_missing: "Venue missing?"
       upcoming_festivals: "Upcoming Festivals"
@@ -66,7 +68,7 @@ en:
       address: "Address"
       website: "Website"
       phone: "Phone"
-      recently_added_venues: "Recently added venues"
+      recently_updated_venues: "Recently updated venues"
       edit_venue: "Edit venue"
       new_venue: "New venue"
       upcoming_artists: "Upcoming artists"
