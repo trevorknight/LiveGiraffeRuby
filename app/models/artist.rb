@@ -1,10 +1,7 @@
-require 'nokogiri'
-require 'open-uri'
-require 'uri'
-
 class Artist < ActiveRecord::Base
   belongs_to :user
   has_and_belongs_to_many :events
+  before_create :canonicalise_name
     
   validates :name, :presence => true,
                    :uniqueness => true
@@ -12,11 +9,11 @@ class Artist < ActiveRecord::Base
   default_scope order('artists.name')
   scope :where_name, lambda {|term| where("artists.name LIKE ?", "%#{term}%") }
   
-  def before_create
+  def canonicalise_name
       echoKey = 'TTXOSQ9K9L1WDCRFA'
       #retrieve canonical artist name from echonest
-      echonest = Nokogiri::HTML(open("http://developer.echonest.com/api/v4/artist/search?api_key=#{echoKey}&name=#{URI.escape(name)}&format=xml"))
-      name = echonest.css('name').first.inner_html
+      echonest = Nokogiri::HTML(open("http://developer.echonest.com/api/v4/artist/search?api_key=#{echoKey}&name=#{URI.escape(self.name)}&format=xml"))
+      self.name = echonest.css('name').first.inner_html
   end
 
   def owned_by?(owner)
