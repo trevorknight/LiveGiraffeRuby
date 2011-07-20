@@ -1,7 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
 require 'uri'
-echoKey = 'TTXOSQ9K9L1WDCRFA'
 
 class Artist < ActiveRecord::Base
   belongs_to :user
@@ -14,6 +13,7 @@ class Artist < ActiveRecord::Base
   scope :where_name, lambda {|term| where("artists.name LIKE ?", "%#{term}%") }
   
   def before_create
+      echoKey = 'TTXOSQ9K9L1WDCRFA'
       #retrieve canonical artist name from echonest
       echonest = Nokogiri::HTML(open("http://developer.echonest.com/api/v4/artist/search?api_key=#{echoKey}&name=#{URI.escape(name)}&format=xml"))
       name = echonest.css('name').first.inner_html
