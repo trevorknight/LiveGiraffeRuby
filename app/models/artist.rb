@@ -10,10 +10,15 @@ class Artist < ActiveRecord::Base
   scope :where_name, lambda {|term| where("artists.name LIKE ?", "%#{term}%") }
   
   def canonicalise_name
+      require 'open-uri'
+      require 'nokogiri'
       echoKey = 'TTXOSQ9K9L1WDCRFA'
       #retrieve canonical artist name from echonest
       echonest = Nokogiri::HTML(open("http://developer.echonest.com/api/v4/artist/search?api_key=#{echoKey}&name=#{URI.escape(self.name)}&format=xml"))
-      self.name = echonest.css('name').first.inner_html
+      bestMatch = echonest.css('name').first
+      if(bestMatch) 
+          self.name = bestMatch.inner_html
+      end
   end
 
   def owned_by?(owner)
