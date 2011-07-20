@@ -12,12 +12,14 @@ class Artist < ActiveRecord::Base
   def canonicalise_name
       require 'open-uri'
       require 'nokogiri'
+      require 'htmlentities'
+      coder = HTMLEntities.new
       echoKey = 'TTXOSQ9K9L1WDCRFA'
       #retrieve canonical artist name from echonest
       echonest = Nokogiri::HTML(open("http://developer.echonest.com/api/v4/artist/search?api_key=#{echoKey}&name=#{URI.escape(self.name)}&format=xml"))
       bestMatch = echonest.css('name').first
       if(bestMatch) 
-          self.name = bestMatch.inner_html
+          self.name = coder.decode(bestMatch.inner_html)
       end
   end
 
