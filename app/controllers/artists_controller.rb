@@ -5,7 +5,7 @@ class ArtistsController < ApplicationController
   # GET /artists
 
   def index
-    @artists = Artist.where("name LIKE ?", "%#{params[:q]}%")
+    @artists = Artist.where("UPPER(name) LIKE UPPER(?)", "%#{params[:q]}%")
 
     respond_to do |format|
       format.html # index.html.erb
