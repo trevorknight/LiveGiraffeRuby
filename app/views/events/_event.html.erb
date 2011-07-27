@@ -18,6 +18,8 @@
       <%= event.show_cost %><br />
       <%= link_to t('views.events.ticket_link'), event.ticket_url unless event.ticket_url.nil? %>
     </div>
-  </div>  
+  </div>
+  
+  <%= add_or_remove_event_button(event.id) %>
 
 </div>

@@ -8,9 +8,12 @@ Ligi::Application.routes.draw do
   resources :users
   resources :profiles
   resources :festivals
+  resources :saved_events
   resource :session
   match '/login' => "sessions#new", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout"
+  match '/save_event' => "events#save_event", :as => "save_event"
+  match '/remove_event' => "events#remove_event", :as => "remove_event"
   
   
   # The priority is based upon order of creation:

@@ -24,7 +24,7 @@ Business:
 
 TODAY
 - to do and milestones into git
-- change registration addresses, names
+- change GoDaddy, Heroku addresses, names
 
 FRIDAY NEXT WEEK
 - artist before_create filter (with verification) to query Echonest: check name, fill-in URLs, bio(?) D

@@ -83,4 +83,18 @@ class EventsController < ApplicationController
       #format.xml  { head :ok }
     end
   end
+  
+  
+  def save_event
+    @saved_event = SavedEvent.new(params[:saved_event])
+    @saved_event.profile = current_user.profile
+    @saved_event.save
+    redirect_to current_user.profile
+  end
+  
+  def remove_event
+    @saved_event = SavedEvent.find(params[:saved_event])
+    @saved_event.delete
+    redirect_to current_user.profile
+  end
 end

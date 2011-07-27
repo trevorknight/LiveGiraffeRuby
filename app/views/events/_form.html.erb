@@ -10,7 +10,7 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :artist_tokens, "Artists" %><br />
+    <%= f.label :artist_tokens, t('views.events.artists') %><br />
     <%= f.text_field :artist_tokens, "data-pre" => @event.artists.to_json %>
 	<p><%= link_to t('views.events.artist_missing'), new_artist_path %></p>
   </div>
