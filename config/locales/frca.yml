@@ -45,6 +45,8 @@ frca:
       upcoming_festivals: "Upcoming Festivals"
       edit_event: "Edit event"
       new_event: "New event"
+      add_to_calendar: "Add to my calendar"
+      remove_from_calendar: "Remove from my calendar"
     festivals:
       festival_info: "Festival Info"
     profiles:
