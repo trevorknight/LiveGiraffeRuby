@@ -1,6 +1,6 @@
 class CreateSavedEvents < ActiveRecord::Migration
   def self.up
-    create_table :saved_events, :id => false do |t|
+    create_table :saved_events, do |t|
       t.references :event
       t.references :profile
     end

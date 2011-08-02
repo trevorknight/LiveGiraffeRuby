@@ -1,27 +1,26 @@
-frca:
+enlg:
   general:
     live_giraffe: "Live Giraffe"
-    cancel: "Cancel"
-    edit: "Edit"
+    cancel: "Nevermind!"
+    edit: "Fix this"
     or: " or "
     venue: "Venue"
     artist: "Artist"
-    artist_name: "Name"
-    there_is_an_error: "There is a problem."
-    all_events: "All Events"
-    all_venues: "All Venues"
+    artist_name: "Nom de Guerre:"
+    there_is_an_error: "Oh no!"
+    all_events: "All Shows"
+    all_venues: "All Places"
     all_artists: "All Artists"
-    login: "Login"
-    register: "Register"
-    to_add_or_edit_content: "to add something or keep a personal calendar"
-    add_something: "Add Something"
-    my_stuff: "My Stuff"
+    login: "Log in"
+    register: "Sign up"
+    to_add_or_edit_content: "to add shows or keep a calendar"
+    add_something: "Add a show"
+    my_stuff: "My Shows"
     logout: "Logout"
-    suggestions: "Suggestions? contact@livegiraffe.com"
-    website: "Website"    
+    suggestions: "Suggestions? Thoughts? contact@livegiraffe.com"
+    website: "Website"
     free: "Free"
-
-    
+    sure: "You sure about that??"
   views:
     artists:
       artists_popular_today: "Artists popular today"
@@ -32,12 +31,13 @@ frca:
       past_shows: "Past shows:"
       none: "None"
     events:
+      artists: "Artists"
       more_info: "More info..."
       start_time: "Start time"
-      cost: "Cost"
+      cost: "Price"
       upcoming_festivals: "Upcoming Festivals"
       at_(venue): "at "
-      ticket_link: "Ticket link"
+      ticket_link: "Get tickets!"
       tickets: "Tickets"
       tickets_from: "Tickets from "
       artist_missing: "Artist missing?"
@@ -45,12 +45,14 @@ frca:
       upcoming_festivals: "Upcoming Festivals"
       edit_event: "Edit event"
       new_event: "New event"
-      add_to_calendar: "Add to my calendar"
-      remove_from_calendar: "Remove from my calendar"
+      add_to_favourites: "Add to my favourites"
+      remove_from_favourites: "Remove from my favourites"
+      login_for_favourites: "Log in to add this show to your favourites"
+      unable_to_save_event: "Unable to save event"
     festivals:
       festival_info: "Festival Info"
     profiles:
-      events_I_created: "Events I Created"
+      events_I_created: "Shows I Shared"
       create_events_msg: "When you add events to Live Giraffe, you will see them here."
       name: "My name"
       edit_profile: "Edit profile"
@@ -59,10 +61,11 @@ frca:
       change_my_email_pw: "Change my email or password"
       calendar_msg: "When you add events to your calendar, you will see them here."
       my_upcoming_shows: "My upcoming shows"
+      saved_event_removed: "Show removed from favourites"
     users:
       email: "Email"
       password: "Password"
-      password_confirmation: "Password confirmation"
+      password_confirmation: "Password again please"
       edit_user: "Edit user"
       new_user: "New user"
     venues:
@@ -75,7 +78,6 @@ frca:
       new_venue: "New venue"
       upcoming_artists: "Upcoming artists"
       
-          
   activerecord:
     errors:
       models:
@@ -91,7 +93,7 @@ frca:
             venue_id:
               blank: "cannot be blank."
             artists:
-              blank: "."
+              blank: "cannot be blank."
         festivals:
         user:
           attributes:

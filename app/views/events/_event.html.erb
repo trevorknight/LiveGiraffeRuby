@@ -19,15 +19,7 @@
       <%= link_to t('views.events.ticket_link'), event.ticket_url unless event.ticket_url.nil? %>
     </div>
   </div>
-    <% if logged_in? %>
-      <% if !current_user.profile.events.member?(event) %>
-        <%= form_for( SavedEvent.new, :url => save_event_path ) do |f| %>
-          <%=f.hidden_field :event_id, :value => event.id  %>
-          <%=f.submit t('views.events.add_to_calendar') %>
-        <% end %>
-      <% end %>
-    <% else %>
-      <%= t('views.events.login_for_calendar') %>
-    <% end %>
-
+ 
+  <%= add_or_remove_event_button(event) %>
+   
 </div> 

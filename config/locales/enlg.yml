@@ -20,7 +20,7 @@ enlg:
     suggestions: "Suggestions? Thoughts? contact@livegiraffe.com"
     website: "Website"
     free: "Free"
-    
+    sure: "You sure about that??"
   views:
     artists:
       artists_popular_today: "Artists popular today"
@@ -45,9 +45,10 @@ enlg:
       upcoming_festivals: "Upcoming Festivals"
       edit_event: "Edit event"
       new_event: "New event"
-      add_to_calendar: "Add to my favourites"
-      remove_from_calendar: "Remove from my favourites"
-      login_for_calendar: "Log in to add this show to your favourites"
+      add_to_favourites: "Add to my favourites"
+      remove_from_favourites: "Remove from my favourites"
+      login_for_favourites: "Log in to add this show to your favourites"
+      unable_to_save_event: "Unable to save event"
     festivals:
       festival_info: "Festival Info"
     profiles:
@@ -60,6 +61,7 @@ enlg:
       change_my_email_pw: "Change my email or password"
       calendar_msg: "When you add events to your calendar, you will see them here."
       my_upcoming_shows: "My upcoming shows"
+      saved_event_removed: "Show removed from favourites"
     users:
       email: "Email"
       password: "Password"
