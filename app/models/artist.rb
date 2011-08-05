@@ -28,3 +28,4 @@ class Artist < ActiveRecord::Base
     user == owner
   end
 end
+
