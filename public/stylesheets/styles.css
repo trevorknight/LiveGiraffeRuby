@@ -103,44 +103,75 @@ contents styles
 	width: 650px;
 }
 
-  	.event_listing
-   { 
-    clear: both;
-    border-bottom: 1px solid #000; 
-    width: 100%;
-    float: left;
-    }
-  
-    .artist_venue_container
-    {
-    float: left;
-    width: 80%;
-    height: 100%;
+  .event{ 
+  clear: both;
+  border-bottom: 1px solid #000; 
+  width: 100%;
+  float: left;
   }
-    .artist_block
-       {
-      float: left;
-      padding: 3px;
-      font-size: 150%;
-      width: 100%;
+  
+    .artist_date_container{
+    clear: both;
+    width: 100%;
     }
     
-    .venue_block
-        {
+      .artist_block{
       float: left;
-      width: 100%;
-      font-size: 100%;
-    }
+      padding: 2px;
+      width: 80%;
+      }
     
-    .date_block
-       {
+    
+      .date_block{
        float: right;
        padding-top: 10px;
        text-align: center;
        width:20%;
+      }
+    
+    .venue_favourites_container{
+    clear: both;
+    width: 100%;
     }
+  
+      .venue_block{
+      float: left;
+      width: 80%;
+      }
+    
+    
+      .favourites_link {
+      width: 20%;
+      float: right;
+      font-size: 90%;
+      }
+    
+  
+  #contents  .event .artist_block .explanation
+    {
+  display:none;
+  font-weight: normal;
+  font-size: 90%;
+  }
 
-/* ------------------------------
+  #contents .event .artist_block:hover .explanation
+    {
+  display: inline;
+  }
+  
+  #contents  .event .venue_name .explanation
+    {
+  display:none;
+  font-weight: normal;
+  font-size: 90%;
+  }
+
+  #contents .event .venue_name:hover .explanation
+    {
+  display: inline;
+  }
+  
+  /* ------------------------------
 footer styles
 ------------------------------ */
 

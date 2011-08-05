@@ -4,7 +4,8 @@ class Event < ActiveRecord::Base
   belongs_to :user
   belongs_to :festival
   has_and_belongs_to_many :artists
-  has_and_belongs_to_many :profiles
+  has_many :saved_events
+  has_many :profiles, :through => :saved_events
   
   attr_reader :artist_tokens
   attr_reader :venue_token
@@ -15,15 +16,6 @@ class Event < ActiveRecord::Base
   scope :upcoming, lambda { where("events.start_time > ?", Time.now)}
   scope :past, lambda { where("events.start_time < ?", Time.now)}
  
-  def show_cost
-    if self.cost
-      if self.cost.nonzero?
-        "#{I18n.t('views.events.cost')}: $#{self.cost}"
-      else
-        t('general.free')
-      end
-    end
-  end
  
   def artist_tokens=(ids)
     self.artist_ids = ids.split(",")
@@ -38,5 +30,5 @@ class Event < ActiveRecord::Base
     user == owner
   end
   
-   
+
 end

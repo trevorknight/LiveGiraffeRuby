@@ -1,6 +1,6 @@
 <div id="side_bar">
   <h2><%= t('views.venues.recently_updated_venues') %></h2>
-  <% Venue.recently_updated.each do |venue| %>
-    <%= link_to venue.name, venue %>
+  <% Venue.recently_updated.limit(15).each do |venue| %>
+    <%= link_to venue.name, venue %><br \>
   <% end %>
 </div>

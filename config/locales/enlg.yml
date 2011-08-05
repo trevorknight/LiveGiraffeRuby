@@ -15,12 +15,12 @@ enlg:
     register: "Sign up"
     to_add_or_edit_content: "to add shows or keep a calendar"
     add_something: "Add a show"
-    my_stuff: "My Stuff"
+    my_stuff: "My Shows"
     logout: "Logout"
     suggestions: "Suggestions? Thoughts? contact@livegiraffe.com"
     website: "Website"
     free: "Free"
-    
+    sure: "You sure about that??"
   views:
     artists:
       artists_popular_today: "Artists popular today"
@@ -31,6 +31,7 @@ enlg:
       past_shows: "Past shows:"
       none: "None"
     events:
+      artists: "Artists"
       more_info: "More info..."
       start_time: "Start time"
       cost: "Price"
@@ -44,6 +45,10 @@ enlg:
       upcoming_festivals: "Upcoming Festivals"
       edit_event: "Edit event"
       new_event: "New event"
+      add_to_favourites: "Add to my favourites"
+      remove_from_favourites: "Remove from my favourites"
+      login_for_favourites: "Log in to add this show to your favourites"
+      unable_to_save_event: "Unable to save event"
     festivals:
       festival_info: "Festival Info"
     profiles:
@@ -56,6 +61,7 @@ enlg:
       change_my_email_pw: "Change my email or password"
       calendar_msg: "When you add events to your calendar, you will see them here."
       my_upcoming_shows: "My upcoming shows"
+      saved_event_removed: "Show removed from favourites"
     users:
       email: "Email"
       password: "Password"
@@ -72,7 +78,6 @@ enlg:
       new_venue: "New venue"
       upcoming_artists: "Upcoming artists"
       
-          
   activerecord:
     errors:
       models:
@@ -88,7 +93,7 @@ enlg:
             venue_id:
               blank: "cannot be blank."
             artists:
-              blank: "."
+              blank: "cannot be blank."
         festivals:
         user:
           attributes:

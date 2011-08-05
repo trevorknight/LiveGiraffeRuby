@@ -1,14 +1,21 @@
 Milestones:
 
 Functionality:
-- artist before_create filter (with verification) to query Echonest: check name, fill-in URLs, bio(?)
-- User ability to add events to calendar
-- clean mental model
+- change artist name canonicalization to only function with scrapers
+- Ajax for add/remove event from calendar
+- flag as incorrect on events (flagged events model -- find by event_id, add to flag count, default_scope)
+- share events (by email, fb, g+)
+- search - date, text, venue
+- Scraping all the sources
+
+- friends
+- fix price display
 - display popular
 - add headliner
 - points system
 - radio
 - phone app
+- search functionality
 
 Data:
 - scraper architecture
@@ -24,7 +31,7 @@ Business:
 
 TODAY
 - to do and milestones into git
-- change registration addresses, names
+- change GoDaddy, Heroku addresses, names
 
 FRIDAY NEXT WEEK
 - artist before_create filter (with verification) to query Echonest: check name, fill-in URLs, bio(?) D

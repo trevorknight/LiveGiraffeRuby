@@ -3,8 +3,7 @@
       <%= image_tag("logo.png", :alt => "Live Giraffe Logo") %>
     </div>
     <div id="language_bar">
-      <%= link_to "LG English", url_for(:locale => 'enlg') unless I18n.locale == :enlg %>
+      <%= link_to "English", url_for(:locale => 'enlg') unless I18n.locale == :enlg %>
       <%= link_to "Français", url_for(:locale => 'frca') unless I18n.locale == :frca %>
-      <%= link_to "English", url_for(:locale => 'enca') unless I18n.locale == :enca %>
     </div>
 </div>

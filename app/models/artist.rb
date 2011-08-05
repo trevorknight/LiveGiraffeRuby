@@ -9,6 +9,7 @@ class Artist < ActiveRecord::Base
   default_scope order('artists.name')
   scope :where_name, lambda {|term| where("artists.name LIKE ?", "%#{term}%") }
   
+  
   def canonicalise_name
       require 'open-uri'
       require 'nokogiri'
