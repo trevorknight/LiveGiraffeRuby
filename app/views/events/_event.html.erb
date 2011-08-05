@@ -1,25 +1,39 @@
-<div class="event_listing">
+<% div_for(event) do %>
   
-  <div class="date_block">
-    <b><%= event.start_time.strftime("%A") %></b><br />
-    <%= event.start_time.strftime("%d %b") %><br /><br />
-    
-  </div>
   
-  <div class="artist_venue_container">
-    <div class="artist_block">
-      <% event.artists.each do |artist| %>  
-        <%= link_to artist.name, artist %><br>
-      <% end %>
+  
+  <div class="artist_date_container">
+    <div class="artist_block" >
+      <h2><% event.artists.each do |artist| %>  
+        <%= artist.name %><span class='explanation'><%= link_to t('general.more'), artist %></span><br \>
+      <% end %></h2>
     </div>
     
+    <div class="date_block">
+      <b><%= event.start_time.strftime("%A") %></b><br />
+      <%= event.start_time.strftime("%d %b") %><br />
+    </div>
+  </div>
+  
+  <div class="venue_favourites_container">
     <div class="venue_block">
-      <p><%= link_to event.venue.name, event.venue unless event.venue.nil? %><br />
-      <%= event.show_cost %><br />
-      <%= link_to t('views.events.ticket_link'), event.ticket_url unless event.ticket_url.nil? %>
+      <p><h3><span class="venue_name"><%= event.venue.name unless event.venue.nil? %></b>
+      <span class="explanation"><%= link_to t('general.more'), event.venue %></span></span></h3>
+      <%= show_cost(event.cost) if event.cost %><br />
+      <%= link_to(t('views.events.full_details'), event) %>
+    </div>
+    <div class="favourites_link">
+      <% if logged_in? %>
+        <% if current_user.profile.events.member?(event) %>
+            <%= remove_event_shown(event) %>
+            <%= add_event_hidden(event) %>
+        <% else %>
+            <%= remove_event_hidden(event) %>
+            <%= add_event_shown(event) %>
+        <% end %>
+      <% else %>
+          <%= t('views.events.login_for_favourites') %>
+      <% end%>
     </div>
   </div>
- 
-  <%= add_or_remove_event_button(event) %>
-   
-</div> 
+<% end %> 

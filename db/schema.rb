@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(:version => 20110726230718) do
     t.datetime "updated_at"
   end
 
-  create_table "saved_events", :id => false, :force => true do |t|
+  create_table "saved_events", :force => true do |t|
     t.integer "event_id"
     t.integer "profile_id"
   end

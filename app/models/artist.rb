@@ -1,13 +1,14 @@
 class Artist < ActiveRecord::Base
   belongs_to :user
   has_and_belongs_to_many :events
-  before_create :canonicalise_name 
+  before_create :canonicalise_name
     
   validates :name, :presence => true,
                    :uniqueness => true
   
   default_scope order('artists.name')
   scope :where_name, lambda {|term| where("artists.name LIKE ?", "%#{term}%") }
+  
   
   def canonicalise_name
       require 'open-uri'

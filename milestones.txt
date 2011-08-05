@@ -1,7 +1,7 @@
 Milestones:
 
 Functionality:
-- artist before_create filter (with verification) to query Echonest: check name, fill-in URLs, bio(?)
+- change artist name canonicalization to only function with scrapers
 - Ajax for add/remove event from calendar
 - flag as incorrect on events (flagged events model -- find by event_id, add to flag count, default_scope)
 - share events (by email, fb, g+)

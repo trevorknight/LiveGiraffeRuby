@@ -2,7 +2,7 @@ frca:
   general:
     live_giraffe: "Live Giraffe"
     cancel: "Nevermind!"
-    edit: "Fix this"
+    edit: "Edit these details"
     or: " or "
     venue: "Venue"
     artist: "Artist"
@@ -21,6 +21,7 @@ frca:
     website: "Website"
     free: "Free"
     sure: "You sure about that??"
+    more: "More"
   views:
     artists:
       artists_popular_today: "Artists popular today"
@@ -32,14 +33,13 @@ frca:
       none: "None"
     events:
       artists: "Artists"
-      more_info: "More info..."
+      full_details: "Full show details..."
       start_time: "Start time"
       cost: "Price"
       upcoming_festivals: "Upcoming Festivals"
       at_(venue): "at "
-      ticket_link: "Get tickets!"
-      tickets: "Tickets"
-      tickets_from: "Tickets from "
+      tickets: "Get tickets!"
+      ticket_link: "Ticket Link"
       artist_missing: "Artist missing?"
       venue_missing: "Venue missing?"
       upcoming_festivals: "Upcoming Festivals"
@@ -47,7 +47,7 @@ frca:
       new_event: "New event"
       add_to_favourites: "Add to my favourites"
       remove_from_favourites: "Remove from my favourites"
-      login_for_favourites: "Log in to add this show to your favourites"
+      login_for_favourites: "Log in to save to your favourites"
       unable_to_save_event: "Unable to save event"
     festivals:
       festival_info: "Festival Info"

@@ -16,15 +16,6 @@ class Event < ActiveRecord::Base
   scope :upcoming, lambda { where("events.start_time > ?", Time.now)}
   scope :past, lambda { where("events.start_time < ?", Time.now)}
  
-  def show_cost
-    if self.cost
-      if self.cost.nonzero?
-        "#{I18n.t('views.events.cost')}: $#{self.cost}"
-      else
-        t('general.free')
-      end
-    end
-  end
  
   def artist_tokens=(ids)
     self.artist_ids = ids.split(",")
