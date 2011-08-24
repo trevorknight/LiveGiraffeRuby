@@ -22,7 +22,7 @@
       </div>
       <div class="favourites_link">
         <% if logged_in? %>
-          <% if current_user.profile.events.member?(e@vent) %>
+          <% if current_user.profile.events.member?(@event) %>
               <%= remove_event_shown(@event) %>
               <%= add_event_hidden(@event) %>
           <% else %>
