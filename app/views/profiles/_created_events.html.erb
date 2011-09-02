@@ -5,7 +5,16 @@
   
   <% if @profile.user.events.any? %>
     <h2><%= t('views.profiles.events_I_created') %></h2>
-      <%= render @profile.user.events  %>
+      <% @profile.user.events.each do |event|  %>
+        <%= link_to event.artists.first.name , edit_event_path(event) %>
+      <% end %>
+  <% end %>
+  
+  <% if @profile.events.past.any? %>
+    <h2><%= t('views.profiles.my_past_shows') %></h2>
+      <% @profile.events.past.each do |event|  %>
+        <%= link_to event.artists.first.name , edit_event_path(event) %>
+      <% end %>
   <% end %>
   
 </div>
