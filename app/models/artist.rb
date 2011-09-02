@@ -16,12 +16,20 @@ class Artist < ActiveRecord::Base
       require 'htmlentities'
       coder = HTMLEntities.new
       echoKey = 'TTXOSQ9K9L1WDCRFA'
-      #retrieve canonical artist name from echonest
-      echonest = Nokogiri::HTML(open("http://developer.echonest.com/api/v4/artist/search?api_key=#{echoKey}&name=#{URI.escape(self.name)}&format=xml"))
-      bestMatch = echonest.css('name').first
-      if(bestMatch) 
-          self.name = coder.decode(bestMatch.inner_html)
+      begin
+        #retrieve canonical artist name from echonest
+        echonest = Nokogiri::HTML(open("http://developer.echonest.com/api/v4/artist/search?api_key=#{echoKey}&name=#{URI.escape(self.name)}&format=xml"))
+        bestMatch = echonest.css('name').first
+        if(bestMatch) 
+            self.name = coder.decode(bestMatch.inner_html)
+        else 
+          raise IOError, "Problem contacting EchoNest"
+        end
+      rescue IOError => e
+        puts e.message
       end
+        
+        
   end
 
   def owned_by?(owner)
