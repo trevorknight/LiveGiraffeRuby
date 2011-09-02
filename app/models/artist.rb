@@ -26,8 +26,6 @@ class Artist < ActiveRecord::Base
       rescue SocketError => e
         puts "Couldn't contact EchoNest; skipping canonicalise_name."
       end
-        
-        
   end
 
   def owned_by?(owner)
