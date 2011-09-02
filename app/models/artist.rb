@@ -22,14 +22,10 @@ class Artist < ActiveRecord::Base
         bestMatch = echonest.css('name').first
         if(bestMatch) 
             self.name = coder.decode(bestMatch.inner_html)
-        else 
-          raise IOError, "Problem contacting EchoNest"
         end
-      rescue IOError => e
-        puts e.message
+      rescue SocketError => e
+        puts "Couldn't contact EchoNest; skipping canonicalise_name."
       end
-        
-        
   end
 
   def owned_by?(owner)
