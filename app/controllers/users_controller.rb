@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to new_session_path, :notice => t('controllers.users.created')
+      session[:user_id] = @user.id
+      redirect_to root_path, :notice => t('controllers.users.created')
     else
       render :action => 'new'
     end
@@ -27,3 +28,4 @@ class UsersController < ApplicationController
     end
   end
 end
+

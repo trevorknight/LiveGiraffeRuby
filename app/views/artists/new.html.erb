@@ -1,5 +1,5 @@
 <div id="contents">
   <h1><%= t('views.artists.new_artist') %></h1>
-  <% link_to "new artist", new_artist_path(:format => :js), :remote => true, :id => 'new_artists_link' %>
+  <%= render 'form' %>
 </div>
 
