@@ -3,7 +3,7 @@
     <div class="artist_date_container">
       <div class="artist_block" >
         <h2><% @event.artists.each do |artist| %>  
-          <%= artist.name %><span class='explanation'><%= link_to t('general.more'), artist %></span><br \>
+          <%= artist.name %> <span class='explanation'><%= link_to t('general.more'), artist %></span><br \>
         <% end %></h2>
       </div>
       
@@ -18,7 +18,6 @@
         <p><h3><span class="venue_name"><%= @event.venue.name unless @event.venue.nil? %></b>
         <span class="explanation"><%= link_to t('general.more'), @event.venue %></span></span></h3>
         <%= show_cost(@event.cost) if @event.cost %><br />
-        <%= link_to(t('views.events.full_details'), @event) %>
       </div>
       <div class="favourites_link">
         <% if logged_in? %>

@@ -20,7 +20,6 @@
       <p><h3><span class="venue_name"><%= event.venue.name unless event.venue.nil? %></b>
       <span class="explanation"> <%= link_to t('general.more'), event.venue %></span></span></h3>
       <%= show_cost(event.cost) if event.cost %><br />
-      <%= link_to(t('views.events.more_info'), event) %>
     </div>
     <div class="favourites_link">
       <% if logged_in? %>
