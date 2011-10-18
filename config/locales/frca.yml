@@ -1,82 +1,84 @@
-frca:
+﻿frca:
   general:
     live_giraffe: "Live Giraffe"
-    cancel: "Nevermind!"
-    edit: "Edit these details"
-    or: " or "
-    venue: "Venue"
-    artist: "Artist"
+    cancel: "Une autre fois!"
+    edit: "Éditer ces détails"
+    or: " ou "
+    venue: "Salle"
+    artist: "Artiste"
     artist_name: "Nom de Guerre:"
-    there_is_an_error: "Oh no!"
-    all_events: "All Shows"
-    all_venues: "All Places"
-    all_artists: "All Artists"
-    login: "Log in"
-    register: "Sign up"
-    to_add_or_edit_content: "to add shows or keep a calendar"
-    add_something: "Add a show"
-    my_stuff: "My Shows"
-    logout: "Logout"
-    suggestions: "Suggestions? Thoughts? contact@livegiraffe.com"
-    website: "Website"
-    free: "Free"
-    sure: "You sure about that??"
-    more: "More"
+    there_is_an_error: "Oh non!"
+    all_events: "Tous les évènements"
+    all_venues: "Toutes les salles"
+    all_artists: "tous les artistes"
+    login: "Se connecter"
+    register: "S'inscrire"
+    to_add_or_edit_content: " Ajouter un évènement à votre calendrier"
+    add_something: "Ajouter un évènement"
+    my_stuff: "Mes évènements"
+    logout: "Se déconnecter"
+    suggestions: "Idées? Suggestions? Écrivez nous! contact@livegiraffe.com"
+    website: "Site internet"
+    free: "Gratuit"
+    sure: "Êtes-vous certain(e)?"
+    more: "Plus"
   views:
     artists:
-      artists_popular_today: "Artists popular today"
-      edit_artist: "Edit artist"
-      next_show: "Next Show"
-      new_artist: "New artist"
-      upcoming_shows: "Upcoming shows:"
-      past_shows: "Past shows:"
-      none: "None"
+      artists_popular_today: "Les artistes plus populaires aujourd'hui "
+      edit_artist: "Éditer l'artiste"
+      next_show: "Prochain évènement"
+      new_artist: "Nouvel artiste"
+      upcoming_shows: "Évènements à venir:"
+      past_shows: "Évènements passés:"
+      none: "Rien"
     events:
-      artists: "Artists"
-      full_details: "Full show details..."
-      start_time: "Start time"
-      cost: "Price"
-      upcoming_festivals: "Upcoming Festivals"
-      at_(venue): "at "
-      tickets: "Get tickets!"
-      ticket_link: "Ticket Link"
-      artist_missing: "Artist missing?"
-      venue_missing: "Venue missing?"
-      upcoming_festivals: "Upcoming Festivals"
-      edit_event: "Edit event"
-      new_event: "New event"
-      add_to_favourites: "Add to my favourites"
-      remove_from_favourites: "Remove from my favourites"
-      login_for_favourites: "Log in to save to your favourites"
-      unable_to_save_event: "Unable to save event"
+      artists: "Artistes"
+      more_info: "Détails de l'évènement"
+      start_time: "Heure de commencement"
+      cost: "Coût"
+      upcoming_festivals: "Festivals à venir"
+      at_(venue): "à la "
+      tickets: "Procurer vos billets!"
+      ticket_link: "raccourci billets"
+      artist_missing: "Artiste absent?"
+      venue_missing: "Salle absente?"
+      upcoming_festivals: "Festivales à venir"
+      edit_event: "Editer l'évènement"
+      new_event: "Nouvel évènement"
+      add_to_favourites: "Ajouter à mes favoris"
+      recently_updated_venues: "Salles dernièrement mises à jour"
+      add_to_favourites: "Ajouter à mes favoris"
+      remove_from_favourites: "Retirer de mes favoris"
+      login_for_favourites: "se connecter pour l'ajouter aux favoris"
+      unable_to_save_event: "Incapable de sauver l'évènement"
     festivals:
-      festival_info: "Festival Info"
+      festival_info: "Information pour les festivales"
     profiles:
-      events_I_created: "Shows I Shared"
-      create_events_msg: "When you add events to Live Giraffe, you will see them here."
-      name: "My name"
+      events_I_created: "Évènemements que j'ai partagé"
+      create_events_msg: "Quand tu vas ajouter des évènements à Live Giraffe, vous allez les voir ici."
+      name: "Mon nom"
       edit_profile: "Edit profile"
-      events_i_created: "Events I created"
-      change_my_profile: "Edit my profile"      
-      change_my_email_pw: "Change my email or password"
-      calendar_msg: "When you add events to your calendar, you will see them here."
-      my_upcoming_shows: "My upcoming shows"
-      saved_event_removed: "Show removed from favourites"
+      events_i_created: "Évènements crées"
+      change_my_profile: "Éditer mon profil"      
+      change_my_email_pw: "Changer mon nom d'utilisateur ou mot de passe"
+      calendar_msg: "Lorsque vous ajouter des évènemnts ils apparaîtrons ici"
+      my_upcoming_shows: "Mes évènements à venir"
+      saved_event_removed: "Évènement retiré de mes favoris"
     users:
-      email: "Email"
-      password: "Password"
-      password_confirmation: "Password again please"
-      edit_user: "Edit user"
-      new_user: "New user"
+      email: "Courriel"
+      password: "PaMot de passe"
+      password_confirmation: "Veuiller confrimer votre mot de passe"
+      edit_user: "Éditer utilisateur"
+      new_user: "Nouvel utilisateur"
     venues:
-      name: "Name"
-      address: "Address"
-      website: "Website"
-      phone: "Phone"
-      recently_updated_venues: "Recently updated venues"
-      edit_venue: "Edit venue"
-      new_venue: "New venue"
-      upcoming_artists: "Upcoming artists"
+      name: "Nom"
+      address: "Addresse"
+      website: "Site internet"
+      phone: "Téléphone"
+      recently_updated_venues: "Salles  dernièrement mises à jour"
+      edit_venue: "Changer la salle"
+      new_venue: "Nouvelle salle"
+      upcoming_artists: "Artistes performant prochainement"
       
   activerecord:
     errors:
@@ -84,62 +86,62 @@ frca:
         artist:
           attributes:
             name:
-              blank: "cannot be blank."
-              taken: "is already taken."
+              blank: "ne peut être laissé vide."
+              taken: "déjà pris."
         event:
           attributes:
             start_time:
-              blank: "cannot be blank."
+              blank: "ne peut être laissé vide."
             venue_id:
-              blank: "cannot be blank."
+              blank: "ne peut être laissé vide"
             artists:
-              blank: "cannot be blank."
+              blank: "ne peut être laissé vide."
         festivals:
         user:
           attributes:
             email:
-              invalid: "is invalid."
-              taken: "is taken."
-            password:
-              too_short: "must be at least 6 characters."
-              confirmation: "must match."
+              invalid: "est invalide"
+              taken: "est déjè pris"
+            password: 
+              too_short: "doit contenir au moins 6 caractères"
+              confirmation: "doivent être identiques"
         venue:
           attributes:
             name:
-              blank: "cannot be blank."
-              taken: "is already taken."
+              blank: "ne peut être laissé vide"
+              taken: "est déjà pris"
             address:
-              blank: "cannot be blank."
+              blank: "ne peut être laissé vide"
   controllers:
     application:
-      log_in: "Please log in to continue."
+      log_in: "Veillez vous connecter pour continuer."
     artists:
-      created: "Artist was successfully created."
-      updated: "Artist was successfully updated."
+      created: "l'artiste a été crée."
+      updated: "l'artiste a été mise à jour."
     events:
-      created: "Event was sucessfully created."
-      updated: "Event was succesfully updated."
+      created: "l'évènement a été crée avec succès."
+      updated: "l'évènement à été mise à jour."
     profiles:
-      updated: "Profile was successfully updated."
+      updated: "Votre profile a été mise a jour."
     sessions:
-      logged_in: "You are now logged in."
-      invalid: "Invalid username / password."
-      logged_out: "You are now logged out."
+      logged_in: "Vous êtes maintenant connecté(e)."
+      invalid: "nom d'utilisateur/mot de passe invalide."
+      logged_out: "Vous êtes maintenant déconnecté(e)"
     users:
-      created: "New user created."
-      updated: "User updated."
+      created: "Nouvel utilsateur crée."
+      updated: "Nouvel utilisateur a été mis à jour."
     venues:
-      created: "Venue was sucessfully created."
-      updated: "Venue was successfully updated."
+      created: "Salle crée."
+      updated: "La salle a été mise à jour"
   date:
     formats:
-      default: "%d/%m/%Y"
-      short: "%d %B"
-      long: "%d %B, %Y"
-    day_names: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
-    abbr_day_names: [Sun, Mon, Tues, Wed, Thu, Fri, Sat]
-    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
-    abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+      default: "%j/%m/%A"
+      short: "%d** %B**"
+      long: "%j %B **, %A"
+    day_names: [Dimanche, Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi]
+    abbr_day_names: [Dim, Lun, Mar, Mer, Jeu, Ven, Sam]
+    month_names: [~, Janvier, Février, Mars, Avril, Mai, Juin, Juillet, Août, Septembre, Octobre, Novembre, Décembre]
+    abbr_month_names: [~, Jan, Fév, Mar, Avr, Mai, Juin, Juil, Aug, Sep, Oct, Nov, Déc]
     order:
       - :year
       - :month

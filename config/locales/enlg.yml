@@ -1,12 +1,12 @@
-enlg:
+﻿enlg:
   general:
     live_giraffe: "Live Giraffe"
     cancel: "Nevermind!"
-    edit: "Fix this"
+    edit: "Edit this"
     or: " or "
     venue: "Venue"
     artist: "Artist"
-    artist_name: "Nom de Guerre:"
+    artist_name: "Artist Name"
     there_is_an_error: "Oh no!"
     all_events: "All Shows"
     all_venues: "All Places"
@@ -32,7 +32,7 @@ enlg:
       none: "None"
     events:
       artists: "Artists"
-      more_info: "More info..."
+      more_info: "Full Details"
       start_time: "Start time"
       cost: "Price"
       upcoming_festivals: "Upcoming Festivals"
@@ -53,6 +53,7 @@ enlg:
       festival_info: "Festival Info"
     profiles:
       events_I_created: "Shows I Shared"
+      my_past_shows: "Show I attended"
       create_events_msg: "When you add events to Live Giraffe, you will see them here."
       name: "My name"
       edit_profile: "Edit profile"
